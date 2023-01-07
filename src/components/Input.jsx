@@ -1,17 +1,15 @@
 import React from 'react';
-import { useState, useEffect, useRef } from "react";
+import { UseState } from 'react';
 import { Outlet } from 'react-router-dom';
 import '../style/style.scss';
+import { Form, Field, Formik, ErrorMessage } from 'formik';
+import { tranclateSchema } from "../validation/validation";
+
 
 const input = () => {
 
-	let english = useRef();
 
-	const handle = (event) => {
-		event.preventDefault();
-		console.log(event);
-	}
-
+	const [word, setword] = UseState([]);
 
 	return (
 		<>
@@ -19,13 +17,26 @@ const input = () => {
 				<div className=' border container py-3' style={{ background: "#d3d3d3", borderRadius: "25px" }}>
 
 
-					<form className=' d-flex flex-wrap container  my-3 justify-content-center py-2' action={handle}>
-						<input type="text" id="persian" name="persian" className='form-control input mx-1 my-2' placeholder='english' />
-						<input type="text" id="english" name="english" className='form-control input mx-1 my-2' placeholder='فارسی' />
-						<div className='col-12'>
-							<input type="submit" className='btn btn-success col-12' />
-						</div>
-					</form>
+					<Formik
+						initialValues={{ english: "", persian: "" }}
+						validationSchema={tranclateSchema}
+						onSubmit={(values) => { setword(values) }}>
+						<Form >
+
+							<Field name="english" className='form-control' placeholder="english" ></Field>
+							<ErrorMessage name="english"
+								render={(msg) => (<small className="text-danger position-absolute">{msg}</small>)} />
+
+
+							<Field name="persian" className='form-control' placeholder="فارسی" ></Field>
+							<ErrorMessage name="persian"
+								render={(msg) => (<small className="text-danger position-absolute">{msg}</small>)} />
+
+
+							<input type="submit" value="ثبت" className="btn btn-primary" />
+
+						</Form>
+					</Formik>
 
 
 
