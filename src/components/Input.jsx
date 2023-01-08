@@ -6,7 +6,7 @@ import { Form, Field, Formik, ErrorMessage } from 'formik';
 import { tranclateSchema } from "../validation/validation";
 
 
-const input = () => {
+const Input = () => {
 
 
 	const [word, setword] = UseState([]);
@@ -54,4 +54,4 @@ const input = () => {
 
 
 
-export default input;
+export default Input;

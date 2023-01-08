@@ -1,4 +1,4 @@
-import axios from axios;
+import axios from "axios";
 const server_url = 'http://localhost:9000';
 
 //tranclate
