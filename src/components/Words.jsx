@@ -10,6 +10,21 @@ const Words = () => {
 				<li className="  mx-3 col-11 col-sm-5 col-lg-3  my-1">
 					<Word ></Word>
 				</li>
+				<li className="  mx-3 col-11 col-sm-5 col-lg-3  my-1">
+					<Word ></Word>
+				</li>
+				<li className="  mx-3 col-11 col-sm-5 col-lg-3  my-1">
+					<Word ></Word>
+				</li>
+				<li className="  mx-3 col-11 col-sm-5 col-lg-3  my-1">
+					<Word ></Word>
+				</li>
+				<li className="  mx-3 col-11 col-sm-5 col-lg-3  my-1">
+					<Word ></Word>
+				</li>
+				<li className="  mx-3 col-11 col-sm-5 col-lg-3  my-1">
+					<Word ></Word>
+				</li>
 
 			</ol>
 
