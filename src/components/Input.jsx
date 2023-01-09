@@ -15,11 +15,11 @@ const Input = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				let { data } = await tranclate(parseInt(word.english));
+				let { data } = await tranclate(word.english);
 				// setmeaning(data);
 				console.log(data)
 			} catch (err) {
-				console.log('مشکل دریافت دیتا');
+				console.log(err,'مشکل دریافت دیتا');
 			}
 		};
 		fetchData();

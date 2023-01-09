@@ -1,8 +1,16 @@
-import axios from axios;
+import axios from 'axios';
 
 
 //tranclate
 export const tranclate = (word) => {
-	const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=fa&dt=t&q= ${word}`;
-	return axios.get(url);
-}
+
+	if (word != null && word.length > 0) {
+		return axios.get(`https://translate.googleapis.com/translate_a/single`, {
+			params: { client: 'gtx',sl: 'en',tl: 'fa',dt: 't',q: word}
+		})
+	}
+
+	return new Promise((resolve, reject) => reject([]));
+
+
+};
