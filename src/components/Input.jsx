@@ -10,9 +10,7 @@ import { createword, tranclate } from '../services/services';
 const Input = () => {
 	const [word, setWord] = useState(null);
 	const [meaning, setmeaning] = useState(null);
-	const inputelement = document.getElementById("english_input");
 
-	const englishinput = useRef();
 
 	useEffect(() => {
 		const fetchData_google = async () => {
@@ -40,6 +38,9 @@ const Input = () => {
 					const { status } = await createword(meaning);
 					if (status == 201) {
 						console.log("کلمه ثبت شد");
+						setmeaning(null);
+						setWord(null);
+
 					}
 				} catch (err) {
 					console.log(err, "مشکل ثبت در سرور داخلی");
@@ -64,7 +65,7 @@ const Input = () => {
 						<Form >
 							<div className='d-flex my-2'>
 
-								<Field name="english" ref={englishinput} className='form-control ltr m-1 input' placeholder="english"></Field>
+								<Field name="english" className='form-control ltr m-1 input' placeholder="english" ></Field>
 								<ErrorMessage name="english"
 									render={(msg) => (<small className="text-danger position-absolute my-4 py-3">{msg}</small>)} />
 

@@ -21,9 +21,10 @@ export const tranclate = (word) => {
 
 //local server
 // return all words
-// export const words = () => {
-// 	return axios.get(`localhost:9000/words`)
-// }
+
+export const words = () => {
+	return axios.get(`http://localhost:9000/words`);
+}
 
 // // return word
 // export const word = (id) => {
