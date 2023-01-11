@@ -1,34 +1,24 @@
 {
   "words": [
     {
-      "english": "hello",
-      "persian": "سلام",
+      "english": "Ramin",
+      "persian": "رامین",
       "id": 1
     },
     {
-      "english": "hello",
-      "persian": "سلام",
+      "english": "Wall",
+      "persian": "دیوار",
       "id": 2
     },
     {
-      "english": "allows",
-      "persian": "اجازه می دهد",
+      "english": "car",
+      "persian": "ماشین",
       "id": 3
-    },
-    {
-      "english": "allows ",
-      "persian": "اجازه می دهد",
-      "id": 4
-    },
-    {
-      "english": "hello",
-      "persian": "سلام",
-      "id": 5
     },
     {
       "english": "pen",
       "persian": "خودکار",
-      "id": 6
+      "id": 4
     }
   ]
 }
