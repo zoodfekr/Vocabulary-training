@@ -22,7 +22,7 @@ export const tranclate = (word) => {
 //local server
 // return all words
 
-export const words = () => {
+export const dbwords = () => {
 	return axios.get(`http://localhost:9000/words`);
 }
 
@@ -34,7 +34,6 @@ export const words = () => {
 
 // post new word
 export const createword = (data) => {
-	console.log("post data:", (data))
 	const url = `http://localhost:9000/words`;
 	return axios.post(url, data);
 };

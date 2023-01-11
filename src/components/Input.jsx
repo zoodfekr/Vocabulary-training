@@ -4,15 +4,18 @@ import { Outlet } from 'react-router-dom';
 import '../style/style.scss';
 import { Form, Field, Formik, ErrorMessage } from 'formik';
 import { tranclateSchema } from "../validation/validation";
-import { createword, tranclate } from '../services/services';
+import { createword, dbwords, tranclate } from '../services/services';
+import Words from './Words';
 
 
 const Input = () => {
 	const [word, setWord] = useState(null);
+
 	const [meaning, setmeaning] = useState(null);
 
-
+// متد ترجمه کلمه
 	useEffect(() => {
+		console.log("word", word);
 		const fetchData_google = async () => {
 
 			if (word.english && word.persian) {
@@ -21,8 +24,9 @@ const Input = () => {
 
 			else if (word.english) {
 				try {
-					let { data } = await tranclate(word.english)
-					setmeaning({ english: word.english, persian: data[0][0][0] })
+					let { data: res } = await tranclate(word.english)
+					setmeaning({ english: word.english, persian: res[0][0][0] })
+					console.log("res", res);
 				} catch (err) {
 					console.log(err, 'مشکل دریافت دیتا');
 				}
@@ -31,8 +35,11 @@ const Input = () => {
 		fetchData_google();
 	}, [word]);
 
+
+// ثبت در سرور داخلی
 	useEffect(() => {
 		const creator = async () => {
+
 			if (meaning != null && meaning.english != meaning.persian) {
 				try {
 					const { status } = await createword(meaning);
@@ -40,7 +47,6 @@ const Input = () => {
 						console.log("کلمه ثبت شد");
 						setmeaning(null);
 						setWord(null);
-
 					}
 				} catch (err) {
 					console.log(err, "مشکل ثبت در سرور داخلی");
@@ -49,6 +55,8 @@ const Input = () => {
 		};
 		creator()
 	}, [meaning]);
+
+
 
 
 	return (
@@ -87,7 +95,7 @@ const Input = () => {
 
 
 					<div>
-						<Outlet />
+						<Outlet></Outlet>
 					</div>
 
 

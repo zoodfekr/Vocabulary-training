@@ -1,25 +1,27 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { words } from "../services/services";
+import { dbwords } from "../services/services";
+import Word from './Word';
 
 const Words = () => {
 
 	const [datawords, setdatawords] = useState(null);
 
 
-
+	// const updater = props.data.meaning;
 
 	useEffect(() => {
-		const loader = async () => {
 
+		const loader = async () => {
 			try {
-				let { words } = await words();
-				console.log(words);
-				// setdatawords(data);
+				let { data: words } = await dbwords();
+				console.log("words", words);
+				setdatawords(words);
 			}
 			catch (err) {
-				console.log("مشکل خواندن دیتا از سرور داخلی", err);
+				console.log("مشکل خواندن دیتا از سرور داخلی");
 			}
 		}
+
 		loader();
 	}, []);
 
@@ -30,6 +32,13 @@ const Words = () => {
 
 			<ol className=" d-flex flex-wrap p-2 justify-content-center">
 
+				{datawords?.map(x => {
+					return (
+						<li>
+							<Word data={x}></Word>
+						</li>
+					)
+				})}
 
 			</ol>
 

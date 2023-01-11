@@ -1,39 +1,34 @@
 {
   "words": [
     {
-      "english": "goog",
-      "persian": "گوگ",
+      "english": "hello",
+      "persian": "سلام",
       "id": 1
     },
     {
-      "english": "good",
-      "persian": "خوب",
+      "english": "hello",
+      "persian": "سلام",
       "id": 2
     },
     {
-      "english": "orange",
-      "persian": "نارنجی",
+      "english": "allows",
+      "persian": "اجازه می دهد",
       "id": 3
     },
     {
-      "english": "orange",
-      "persian": "نارنجی",
+      "english": "allows ",
+      "persian": "اجازه می دهد",
       "id": 4
     },
     {
-      "english": "mother",
-      "persian": "مادر",
+      "english": "hello",
+      "persian": "سلام",
       "id": 5
     },
     {
-      "english": "sister",
-      "persian": "خواهر",
+      "english": "pen",
+      "persian": "خودکار",
       "id": 6
-    },
-    {
-      "english": "sister",
-      "persian": "خواهر",
-      "id": 7
     }
   ]
 }
