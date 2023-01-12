@@ -6,9 +6,10 @@ import { Form, Field, Formik, ErrorMessage } from 'formik';
 import { tranclateSchema } from "../validation/validation";
 import { createword, dbwords, english_tranclate, persian_tranclate, remover, tranclate } from '../services/services';
 import Words from './Words';
+import checker from '../components/Navbar'
 
 
-const Input = ({ invalue, setWord, datawords, clear }) => {
+const Input = ({ invalue, datawords, checker, clear }) => {
 
 
 	const initialvalues = { english: "", persian: "" };
@@ -21,10 +22,8 @@ const Input = ({ invalue, setWord, datawords, clear }) => {
 						// onReset={handleReset}
 						initialValues={initialvalues}
 						validationSchema={tranclateSchema}
-
-
 						onSubmit={async (values, { resetForm }) => {
-							await setWord(values)
+							await checker(values)
 							resetForm()
 						}}
 

@@ -6,17 +6,17 @@ const Words = ({ datawords, clear }) => {
 
 	return (
 
-		<div className="container border p-1 border-danger" style={{ background: "#d3d3d3", borderRadius: "25px" }}>
+		<div className=" border p-1 border-info" style={{ background: "#d3d3d3", borderRadius: "25px" }}>
 
-			<ol className=" d-flex flex-wrap p-2 justify-content-center">
-				{/* {console.log("dataprops", props.data)} */}
+			<ol className="  p-2 justify-content-center">
+
 				{datawords?.map(datawords => {
 					return (
 						<li>
 							<Word datawords={datawords} clear={clear}></Word>
 						</li>
 					)
-				})}
+				}).reverse()}
 
 			</ol>
 

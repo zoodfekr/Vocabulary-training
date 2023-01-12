@@ -1,24 +1,19 @@
 {
   "words": [
     {
-      "english": "Ramin",
-      "persian": "رامین",
-      "id": 1
+      "english": "mother",
+      "persian": "مادر",
+      "id": 17
     },
     {
-      "english": "Wall",
-      "persian": "دیوار",
-      "id": 2
+      "english": "checker",
+      "persian": "چک کننده",
+      "id": 18
     },
     {
-      "english": "car",
-      "persian": "ماشین",
-      "id": 3
-    },
-    {
-      "english": "pen",
-      "persian": "خودکار",
-      "id": 4
+      "english": "hello",
+      "persian": "سلام",
+      "id": 19
     }
   ]
 }

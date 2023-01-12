@@ -19,17 +19,17 @@ const Word = ({ datawords, clear }) => {
 
 	return (
 
-		<div className="  word d-flex p-1 justify-content-center">
+		<div className="  word d-flex p-1 justify-content-center border">
 
 
-			<input type="text" className="col-5 m-1 p-2" placeholder="English" disabled value={datawords.english} />
+			<input type="text" className="col-3 m-1 p-2" placeholder="English" disabled value={datawords.english} />
 			<p className="d-flex align-items-center  my-0">:</p>
-			<input type="text" className="col-5 m-1 p-2" placeholder="فارسی" disabled value={datawords.persian} />
+			<input type="text" className="col-3 m-1 p-2" placeholder="فارسی" disabled value={datawords.persian} />
 
 
 
 
-			<div className="d-flex flex-column justify-content-around ">
+			<div className="d-flex flex-column justify-content-around border border-success ">
 				<button className="btn btn-danger" title="delete"
 					onClick={() => clear(datawords.id)}
 				></button>

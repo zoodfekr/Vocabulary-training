@@ -39,7 +39,7 @@ const Navbar = () => {
 					setinvalue("");
 
 				} catch (err) {
-					console.log(err, ' مشکل دریافت دیتا انگلیسی');
+					console.log(' مشکل دریافت دیتا انگلیسی');
 				}
 			}
 			else if (word.persian && !word.english) {
@@ -48,7 +48,7 @@ const Navbar = () => {
 					setmeaning({ english: eng[0][0][0], persian: word.persian });
 					setinvalue("");
 				} catch (err) {
-					console.log(err, 'مشکل دریافت دیتا فارسی');
+					console.log('مشکل دریافت دیتا فارسی');
 				}
 			}
 		};
@@ -68,7 +68,7 @@ const Navbar = () => {
 						setinvalue(null)
 					}
 				} catch (err) {
-					console.log(err, "مشکل ثبت در سرور داخلی");
+					console.log("مشکل ثبت در سرور داخلی");
 				}
 			}
 
@@ -106,12 +106,26 @@ const Navbar = () => {
 		}
 	}
 
+	// چک کننده کلمات تکراری
+	const checker = (value) => {
+		let ebank = datawords.map(x => x.english);
+		let pbank = datawords.map(x => x.persian);
+		setinvalue("");
 
+		if (ebank.includes(value.english) || pbank.includes(value.persian)) {
+			setinvalue(null);
+			alert("کلمه شما از قبل وجود دارد")
+		} else {
+			setWord(value)
+			setinvalue(null);
+		}
+	}
 
 
 	return (
 		<>
 			<nav class="navbar bg-dark navbar-dark navbar-expand-lg   shadow-lg" dir="rtl" >
+
 				<div class="container" id="top">
 					<Logo />
 					{/* {location.pathname == "/" ? <Search query={query} finder={finder} /> : null} */}
@@ -119,7 +133,7 @@ const Navbar = () => {
 			</nav >
 
 			<div>
-				<Input invalue={invalue} setWord={setWord} datawords={datawords} clear={clear} ></Input>
+				<Input invalue={invalue} checker={checker} datawords={datawords} clear={clear} ></Input>
 			</div>
 		</>
 	)

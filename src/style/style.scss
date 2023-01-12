@@ -1,5 +1,5 @@
 body {
-	background-color: #f5f3f4;
+	background-color: #426f8560;
 }
 .rtl {
 	direction: rtl;
@@ -17,6 +17,8 @@ body {
 	}
 }
 .word {
+	border: 1px solid red !important;
 	background-color: rgba(252, 232, 232, 0.527);
 	border-radius: 25px;
+	// max-width: 25rem;
 }
