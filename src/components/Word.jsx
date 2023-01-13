@@ -3,37 +3,22 @@ import { remover } from "../services/services";
 
 const Word = ({ datawords, clear }) => {
 
-	// console.log("wwwwwwwww", datawords);
-
-	// const clear = async () => {
-	// 	// console.log(props.data.id);
-	// 	try {
-	// 		const { status } = remover(props.data.id);
-	// 		if (status == 200) {
-	// 			console.log("کلمه حذف شد");
-	// 		}
-	// 	} catch {
-	// 		console.log("مشکل در حذف کلمه");
-	// 	}
-	// }
+	const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.4)`
 
 	return (
 
-		<div className="  word d-flex p-1 justify-content-center border">
+		<div className="  word d-flex p-1 justify-content-center  p-3 m-1" style={{ backgroundColor: randomcolor }}>
+
+			<p className=" m-1" ><small>{datawords.english}</small></p>
+			<p lassName="d-flex align-items-center  my-0">:</p>
+			<p className=" m-1" ><small>{datawords.persian}</small></p>
 
 
-			<input type="text" className="col-3 m-1 p-2" placeholder="English" disabled value={datawords.english} />
-			<p className="d-flex align-items-center  my-0">:</p>
-			<input type="text" className="col-3 m-1 p-2" placeholder="فارسی" disabled value={datawords.persian} />
-
-
-
-
-			<div className="d-flex flex-column justify-content-around border border-success ">
+			<div className="d-flex flex-column justify-content-around  ">
 				<button className="btn btn-danger" title="delete"
 					onClick={() => clear(datawords.id)}
 				></button>
-				{/* <button className="btn btn-info" title="edite"></button> */}
+				{/* <button className="btn btn-info" title="edite" onClick={() => console.log(randomcolor)}></button> */}
 			</div>
 
 

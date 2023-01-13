@@ -25,7 +25,7 @@ const Navbar = () => {
 	useEffect(() => {
 
 		const fetchData_google = async () => {
-			setWord(null);
+			// setWord(null);
 
 			if (word.english && word.persian) {
 				setmeaning({ english: word.english, persian: word.persian })
@@ -39,7 +39,9 @@ const Navbar = () => {
 					setinvalue("");
 
 				} catch (err) {
+					// setinvalue("");
 					console.log(' مشکل دریافت دیتا انگلیسی');
+					alert("عدم دسترس به سرور")
 				}
 			}
 			else if (word.persian && !word.english) {
@@ -48,7 +50,11 @@ const Navbar = () => {
 					setmeaning({ english: eng[0][0][0], persian: word.persian });
 					setinvalue("");
 				} catch (err) {
+					// setinvalue("");
+					alert("عدم دسترس به سرور")
 					console.log('مشکل دریافت دیتا فارسی');
+					// setinvalue(null);
+
 				}
 			}
 		};

@@ -1,19 +1,94 @@
 {
   "words": [
     {
-      "english": "mother",
-      "persian": "مادر",
+      "english": "Overview",
+      "persian": "بررسی اجمالی",
+      "id": 7
+    },
+    {
+      "english": "progress ",
+      "persian": "پیش رفتن",
+      "id": 9
+    },
+    {
+      "english": "progress bar",
+      "persian": "نوار پیشرفت",
+      "id": 10
+    },
+    {
+      "english": "fanciness",
+      "persian": "خیال بافی",
+      "id": 11
+    },
+    {
+      "english": "square",
+      "persian": "مربع",
+      "id": 13
+    },
+    {
+      "english": "element ",
+      "persian": "عنصر",
+      "id": 14
+    },
+    {
+      "english": "pen",
+      "persian": "خودکار",
+      "id": 15
+    },
+    {
+      "english": "allows",
+      "persian": "اجازه می دهد",
+      "id": 16
+    },
+    {
+      "english": "sister",
+      "persian": "خواهر",
       "id": 17
     },
     {
-      "english": "checker",
-      "persian": "چک کننده",
+      "english": "bowels ",
+      "persian": "روده ها",
       "id": 18
     },
     {
-      "english": "hello",
-      "persian": "سلام",
+      "english": "Melika",
+      "persian": "ملیکا",
       "id": 19
+    },
+    {
+      "english": "student",
+      "persian": "دانشجو",
+      "id": 20
+    },
+    {
+      "english": "They ",
+      "persian": "آنها",
+      "id": 21
+    },
+    {
+      "english": "state ",
+      "persian": "حالت",
+      "id": 22
+    },
+    {
+      "english": "Hooks ",
+      "persian": "قلاب",
+      "id": 23
+    },
+    {
+      "english": "other ",
+      "persian": "دیگر",
+      "id": 24
+    },
+    {
+      "english": "without ",
+      "persian": "بدون",
+      "id": 25
+    },
+    {
+      "english": "class",
+      "persian": "کلاس",
+      "id": 26
     }
   ]
 }

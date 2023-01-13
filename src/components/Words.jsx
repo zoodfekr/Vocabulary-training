@@ -6,15 +6,18 @@ const Words = ({ datawords, clear }) => {
 
 	return (
 
-		<div className=" border p-1 border-info" style={{ background: "#d3d3d3", borderRadius: "25px" }}>
+		<div className=" border p-1 border-info" style={{ borderRadius: "25px" }}>
 
-			<ol className="  p-2 justify-content-center">
+			<ol className=" justify-content-start d-flex flex-wrap">
 
 				{datawords?.map(datawords => {
 					return (
-						<li>
+
+
+						<li >
 							<Word datawords={datawords} clear={clear}></Word>
 						</li>
+
 					)
 				}).reverse()}
 

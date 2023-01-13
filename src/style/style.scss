@@ -17,8 +17,21 @@ body {
 	}
 }
 .word {
-	border: 1px solid red !important;
-	background-color: rgba(252, 232, 232, 0.527);
+	// border: 1px solid red !important;
 	border-radius: 25px;
-	// max-width: 25rem;
+
+}
+
+ol {
+
+
+	li {
+		margin-right: 25px;
+
+
+
+		&::marker {
+			font-size: small;
+		}
+	}
 }
