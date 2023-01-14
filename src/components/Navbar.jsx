@@ -8,6 +8,8 @@ import { createword, dbwords, english_tranclate, persian_tranclate, remover, tra
 import Words from './Words';
 import Input from './Input';
 import Logo from './Logo';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Navbar = () => {
@@ -21,40 +23,40 @@ const Navbar = () => {
 
 	const [invalue, setinvalue] = useState(null); // خالی کننده مقدار ورودی ها
 
+	let internet = window.navigator.onLine;
+
 	//  ترجمه کلمه
 	useEffect(() => {
-
 		const fetchData_google = async () => {
-			// setWord(null);
-
 			if (word.english && word.persian) {
 				setmeaning({ english: word.english, persian: word.persian })
 				setinvalue("");
-			}
+			} else {
 
-			else if (word.english && !word.persian) {
-				try {
-					let { data: per } = await english_tranclate(word.english)
-					setmeaning({ english: word.english, persian: per[0][0][0] })
+				if (word.english && !word.persian) {
 					setinvalue("");
+					try {
+						let { data: per } = await english_tranclate(word.english)
+						setmeaning({ english: word.english, persian: per[0][0][0] })
+						setinvalue(null);
 
-				} catch (err) {
-					// setinvalue("");
-					console.log(' مشکل دریافت دیتا انگلیسی');
-					alert("عدم دسترس به سرور")
+					} catch (err) {
+						setinvalue(null);
+						console.log(' مشکل دریافت دیتا انگلیسی');
+						alert("عدم دسترس به سرور")
+					}
 				}
-			}
-			else if (word.persian && !word.english) {
-				try {
-					let { data: eng } = await persian_tranclate(word.persian);
-					setmeaning({ english: eng[0][0][0], persian: word.persian });
+				else if (word.persian && !word.english) {
 					setinvalue("");
-				} catch (err) {
-					// setinvalue("");
-					alert("عدم دسترس به سرور")
-					console.log('مشکل دریافت دیتا فارسی');
-					// setinvalue(null);
-
+					try {
+						let { data: eng } = await persian_tranclate(word.persian);
+						setmeaning({ english: eng[0][0][0], persian: word.persian });
+						setinvalue(null);
+					} catch (err) {
+						setinvalue(null);
+						alert("عدم دسترس به سرور")
+						console.log('مشکل دریافت دیتا فارسی');
+					}
 				}
 			}
 		};
@@ -68,11 +70,18 @@ const Navbar = () => {
 		const creator = async () => {
 			if (meaning != null && meaning.english != meaning.persian) {
 				try {
+
+					// const { status } = await toast.promise(createword(meaning))
 					const { status } = await createword(meaning);
 					if (status == 201) {
+						toast.success("کلمه ساخته شد")
 						console.log("کلمه ثبت شد");
-						setinvalue(null)
+						setinvalue(null);
+					} else {
+						toast.error("کلمه ساخته نشد")
+
 					}
+
 				} catch (err) {
 					console.log("مشکل ثبت در سرور داخلی");
 				}
@@ -99,6 +108,8 @@ const Navbar = () => {
 			const { status } = await remover(id);
 			if (status == 200) {
 				console.log("کلمه حذف شد");
+				toast.success("کلمه حذف شد")
+
 				try {
 					let { data: words } = await dbwords();
 					setdatawords(words);
@@ -135,11 +146,27 @@ const Navbar = () => {
 				<div class="container" id="top">
 					<Logo />
 					{/* {location.pathname == "/" ? <Search query={query} finder={finder} /> : null} */}
+
 				</div >
 			</nav >
 
 			<div>
 				<Input invalue={invalue} checker={checker} datawords={datawords} clear={clear} ></Input>
+			</div>
+			<div>
+
+				<ToastContainer
+					position="top-center"
+					autoClose={5000}
+					hideProgressBar={false}
+					newestOnTop={false}
+					closeOnClick
+					rtl={false}
+					pauseOnFocusLoss
+					draggable
+					pauseOnHover
+					theme="colored"
+				/>
 			</div>
 		</>
 	)

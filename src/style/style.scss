@@ -1,6 +1,14 @@
+@font-face {
+	font-family: 'B-Mitra';
+	src: local('B-Mitr'), url(../fonts/B-Mitra.ttf) format('truetype');
+}
 body {
 	background-color: #426f8560;
+	font-family: B-Mitra;
+		font-size: larger;
+		// font-weight: 600;
 }
+
 .rtl {
 	direction: rtl;
 }
@@ -11,14 +19,23 @@ body {
 
 .input {
 	width: 48%;
+
 	&:focus {
 		border: none;
 		box-shadow: 0px 0px 5px red !important;
 	}
 }
+
 .word {
-	// border: 1px solid red !important;
 	border-radius: 25px;
+	transition: all 1s;
+	
+		&:hover {
+			transition: all 0.3s;
+			transform: scale(1.1);
+			background-color: rgba(64, 255, 0, 0.69) !important;
+			border: red solid 5px !important;
+		}
 
 }
 

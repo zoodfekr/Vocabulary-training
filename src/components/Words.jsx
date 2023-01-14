@@ -14,7 +14,7 @@ const Words = ({ datawords, clear }) => {
 					return (
 
 
-						<li >
+						<li style={{ minWidth: "250px" }}>
 							<Word datawords={datawords} clear={clear}></Word>
 						</li>
 

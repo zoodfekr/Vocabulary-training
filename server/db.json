@@ -41,26 +41,6 @@
       "id": 16
     },
     {
-      "english": "sister",
-      "persian": "خواهر",
-      "id": 17
-    },
-    {
-      "english": "bowels ",
-      "persian": "روده ها",
-      "id": 18
-    },
-    {
-      "english": "Melika",
-      "persian": "ملیکا",
-      "id": 19
-    },
-    {
-      "english": "student",
-      "persian": "دانشجو",
-      "id": 20
-    },
-    {
       "english": "They ",
       "persian": "آنها",
       "id": 21
@@ -81,14 +61,124 @@
       "id": 24
     },
     {
-      "english": "without ",
-      "persian": "بدون",
-      "id": 25
-    },
-    {
       "english": "class",
       "persian": "کلاس",
       "id": 26
+    },
+    {
+      "english": "hello",
+      "persian": "سلام",
+      "id": 27
+    },
+    {
+      "english": "space",
+      "persian": "فضا",
+      "id": 28
+    },
+    {
+      "english": "Mock",
+      "persian": "مسخره کردن",
+      "id": 30
+    },
+    {
+      "english": "resolve",
+      "persian": "برطرف کردن",
+      "id": 31
+    },
+    {
+      "english": "resolve",
+      "persian": "برطرف کردن",
+      "id": 32
+    },
+    {
+      "english": "addons",
+      "persian": "افزونه ها",
+      "id": 34
+    },
+    {
+      "english": "seriously",
+      "persian": "به طور جدی",
+      "id": 35
+    },
+    {
+      "english": "playground",
+      "persian": "زمین بازی",
+      "id": 36
+    },
+    {
+      "english": "Container",
+      "persian": "ظرف",
+      "id": 37
+    },
+    {
+      "english": "default",
+      "persian": "پیش فرض",
+      "id": 38
+    },
+    {
+      "english": "make ",
+      "persian": "ساختن",
+      "id": 39
+    },
+    {
+      "english": "licensed ",
+      "persian": "دارای مجوز",
+      "id": 40
+    },
+    {
+      "english": "under ",
+      "persian": "زیر",
+      "id": 41
+    },
+    {
+      "english": "Hacking ",
+      "persian": "هک کردن",
+      "id": 42
+    },
+    {
+      "english": "Advisories",
+      "persian": "مشاوره ها",
+      "id": 43
+    },
+    {
+      "english": "Press",
+      "persian": "مطبوعات",
+      "id": 44
+    },
+    {
+      "english": "local ",
+      "persian": "محلی",
+      "id": 45
+    },
+    {
+      "english": "Keywords",
+      "persian": "کلید واژه ها",
+      "id": 46
+    },
+    {
+      "english": "suite ",
+      "persian": "سوئیت",
+      "id": 47
+    },
+    {
+      "english": "scalable ",
+      "persian": "مقیاس پذیر",
+      "id": 48
+    },
+    {
+      "english": "maintained ",
+      "persian": "نگهداری",
+      "id": 49
+    },
+    {
+      "english": "announcements ",
+      "persian": "اطلاعیه ها",
+      "id": 50
+    },
+    {
+      "english": "packages ",
+      "persian": "بسته ها",
+      "id": 51
     }
   ]
 }
