@@ -1,3 +1,4 @@
+// @import '~react-pro-sidebar/dist/scss/styles.scss';
 @font-face {
 	font-family: 'B-Mitra';
 	src: local('B-Mitr'), url(../fonts/B-Mitra.ttf) format('truetype');
@@ -29,7 +30,7 @@ body {
 .word {
 	border-radius: 25px;
 	transition: all 1s;
-	
+
 		&:hover {
 			transition: all 0.3s;
 			transform: scale(1.1);

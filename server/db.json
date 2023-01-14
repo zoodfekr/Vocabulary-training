@@ -179,6 +179,11 @@
       "english": "packages ",
       "persian": "بسته ها",
       "id": 51
+    },
+    {
+      "english": "Bash",
+      "persian": "ضربه شدید",
+      "id": 52
     }
   ]
 }

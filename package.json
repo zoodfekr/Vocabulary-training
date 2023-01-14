@@ -17,6 +17,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-portal": "^4.2.2",
+    "react-pro-sidebar": "^1.0.0-beta.1",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.1",
