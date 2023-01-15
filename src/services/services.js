@@ -60,7 +60,8 @@ export const remover = (id) => {
 	return axios.delete(`http://localhost:9000/words/${id}`)
 }
 
-// // update word
-// export const update = (id) => {
-// 	return axios.put(`localhost:9000/words/${id}`)
-// }
+// update word
+export const update = (id, data) => {
+	const url = `http://localhost:9000/words/${id}`;
+	return axios.put(url, data)
+}

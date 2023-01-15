@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import '../style/style.scss';
 import { Form, Field, Formik, ErrorMessage } from 'formik';
 import { tranclateSchema } from "../validation/validation";
-import { createword, dbwords, english_tranclate, persian_tranclate, remover, tranclate } from '../services/services';
+import { createword, dbwords, english_tranclate, persian_tranclate, remover, tranclate, update } from '../services/services';
 import Words from './Words';
 import Input from './Input';
 import Logo from './Logo';
@@ -12,19 +12,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-
-
-
-
-
 const Navbar = () => {
-
 
 	const [word, setWord] = useState(null); //کلمه دریافتی از کاربر
 	const [meaning, setmeaning] = useState(null); // کلمه معنی شده از گوگل
 	const [datawords, setdatawords] = useState(null); // کلمه های خوانده شده از سرور داخلی
 	const [invalue, setinvalue] = useState(null); // خالی کننده مقدار ورودی ها
-	let internet = window.navigator.onLine;
+
 
 	//  ترجمه کلمه
 	useEffect(() => {
@@ -104,16 +98,14 @@ const Navbar = () => {
 
 	//حذف کننده کلمه
 	const clear = async (id) => {
-		// console.log(props.data.id);
 		try {
 			const { status } = await remover(id);
 			if (status == 200) {
-				console.log("کلمه حذف شد");
 				toast.success("کلمه حذف شد")
-
 				try {
 					let { data: words } = await dbwords();
 					setdatawords(words);
+					alert("کلمات از سرور خوانده شد")
 				}
 				catch (err) {
 					console.log("مشکل خواندن دیتا از سرور داخلی");
@@ -129,13 +121,25 @@ const Navbar = () => {
 		let ebank = datawords.map(x => x.english);
 		let pbank = datawords.map(x => x.persian);
 		setinvalue("");
-
 		if (ebank.includes(value.english) || pbank.includes(value.persian)) {
 			setinvalue(null);
 			alert("کلمه شما از قبل وجود دارد")
 		} else {
 			setWord(value)
 			setinvalue(null);
+		}
+	}
+
+	//به روزرسانی کلمه
+	const handleupdate = async (id, data) => {
+		try {
+			const { status } = await update(id, data);
+			if (status == 200) {
+				console.log(" کلمه به روز شد ");
+				toast.success("کلمه به روز شد  ")
+			}
+		} catch {
+			console.log("مشکل در به روز رسانی کلمه");
 		}
 	}
 
@@ -157,7 +161,7 @@ const Navbar = () => {
 			<div className='d-flex'>
 
 
-				<Input invalue={invalue} checker={checker} datawords={datawords} clear={clear} ></Input>
+				<Input invalue={invalue} checker={checker} datawords={datawords} clear={clear} update={update} handleupdate={handleupdate} ></Input>
 
 			</div>
 

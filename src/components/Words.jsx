@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { dbwords } from "../services/services";
 import Word from './Word';
 
-const Words = ({ datawords, clear }) => {
+const Words = ({ datawords, clear, handleupdate }) => {
 
 	return (
 
@@ -15,7 +15,7 @@ const Words = ({ datawords, clear }) => {
 
 
 						<li style={{ minWidth: "250px" }}>
-							<Word datawords={datawords} clear={clear}></Word>
+							<Word datawords={datawords} clear={clear} handleupdate={handleupdate}></Word>
 						</li>
 
 					)

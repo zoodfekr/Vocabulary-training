@@ -2,7 +2,7 @@
   "words": [
     {
       "english": "Overview",
-      "persian": "بررسی اجمالی",
+      "persian": "دمپایی مجانی",
       "id": 7
     },
     {
@@ -29,11 +29,6 @@
       "english": "element ",
       "persian": "عنصر",
       "id": 14
-    },
-    {
-      "english": "pen",
-      "persian": "خودکار",
-      "id": 15
     },
     {
       "english": "allows",
@@ -247,8 +242,23 @@
     },
     {
       "english": "noticed ",
-      "persian": "متوجه شد",
+      "persian": "متوجه شده اید",
       "id": 67
+    },
+    {
+      "english": "Record",
+      "persian": "ثبت کردن",
+      "id": 69
+    },
+    {
+      "english": "as",
+      "persian": "به طور",
+      "id": 70
+    },
+    {
+      "english": "Edit",
+      "persian": "ویرایش",
+      "id": 71
     }
   ]
 }
