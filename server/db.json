@@ -66,11 +66,6 @@
       "id": 26
     },
     {
-      "english": "hello",
-      "persian": "سلام",
-      "id": 27
-    },
-    {
       "english": "space",
       "persian": "فضا",
       "id": 28
@@ -184,6 +179,76 @@
       "english": "Bash",
       "persian": "ضربه شدید",
       "id": 52
+    },
+    {
+      "english": "directly",
+      "persian": "به طور مستقیم",
+      "id": 53
+    },
+    {
+      "english": "nested",
+      "persian": "تو در تو",
+      "id": 55
+    },
+    {
+      "english": "shutter",
+      "persian": "کرکره",
+      "id": 56
+    },
+    {
+      "english": "sliding",
+      "persian": "کشویی",
+      "id": 57
+    },
+    {
+      "english": "ready",
+      "persian": "آماده",
+      "id": 58
+    },
+    {
+      "english": "pretty ",
+      "persian": "بسیار",
+      "id": 59
+    },
+    {
+      "english": "able ",
+      "persian": "قادر",
+      "id": 60
+    },
+    {
+      "english": "modify ",
+      "persian": "تغییر",
+      "id": 61
+    },
+    {
+      "english": "collapse ",
+      "persian": "سقوط - فروپاشی",
+      "id": 62
+    },
+    {
+      "english": "Instead ",
+      "persian": "بجای",
+      "id": 63
+    },
+    {
+      "english": "repetitively ",
+      "persian": "به طور مکرر",
+      "id": 64
+    },
+    {
+      "english": "demonstrate",
+      "persian": "نشان دادن",
+      "id": 65
+    },
+    {
+      "english": "above ",
+      "persian": "در بالا",
+      "id": 66
+    },
+    {
+      "english": "noticed ",
+      "persian": "متوجه شد",
+      "id": 67
     }
   ]
 }

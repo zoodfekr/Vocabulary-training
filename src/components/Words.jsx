@@ -6,7 +6,7 @@ const Words = ({ datawords, clear }) => {
 
 	return (
 
-		<div className=" border p-1 border-info" style={{ borderRadius: "25px" }}>
+		<div className=" border  border-info words" style={{ borderRadius: "25px" }}>
 
 			<ol className=" justify-content-start d-flex flex-wrap">
 

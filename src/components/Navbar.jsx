@@ -13,17 +13,17 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
+
+
+
+
 const Navbar = () => {
 
 
 	const [word, setWord] = useState(null); //کلمه دریافتی از کاربر
-
 	const [meaning, setmeaning] = useState(null); // کلمه معنی شده از گوگل
-
 	const [datawords, setdatawords] = useState(null); // کلمه های خوانده شده از سرور داخلی
-
 	const [invalue, setinvalue] = useState(null); // خالی کننده مقدار ورودی ها
-
 	let internet = window.navigator.onLine;
 
 	//  ترجمه کلمه
@@ -154,11 +154,18 @@ const Navbar = () => {
 				</div >
 			</nav >
 
-			<div>
-				<Input invalue={invalue} checker={checker} datawords={datawords} clear={clear} ></Input>
-			</div>
-			<div>
+			<div className='d-flex'>
 
+
+				<Input invalue={invalue} checker={checker} datawords={datawords} clear={clear} ></Input>
+
+			</div>
+
+
+
+
+			{/* toastify */}
+			<div>
 				<ToastContainer
 					position="top-center"
 					autoClose={5000}
@@ -172,6 +179,7 @@ const Navbar = () => {
 					theme="colored"
 				/>
 			</div>
+
 		</>
 	)
 

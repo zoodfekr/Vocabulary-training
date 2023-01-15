@@ -1,13 +1,15 @@
-// @import '~react-pro-sidebar/dist/scss/styles.scss';
 @font-face {
 	font-family: 'B-Mitra';
 	src: local('B-Mitr'), url(../fonts/B-Mitra.ttf) format('truetype');
 }
+@font-face {
+	font-family: 'B-NAZANIN';
+	src: local('B-NAZANIN'), url(../fonts/B-NAZANIN.ttf) format('truetype');
+}
 body {
 	background-color: #426f8560;
-	font-family: B-Mitra;
+	font-family: B-NAZANIN;
 		font-size: larger;
-		// font-weight: 600;
 }
 
 .rtl {
@@ -20,36 +22,34 @@ body {
 
 .input {
 	width: 48%;
-
 	&:focus {
 		border: none;
 		box-shadow: 0px 0px 5px red !important;
 	}
 }
-
-.word {
-	border-radius: 25px;
-	transition: all 1s;
-
+.words {
+	.word {
+		border-radius: 25px;
+		transition: all 1s;
 		&:hover {
-			transition: all 0.3s;
-			transform: scale(1.1);
-			background-color: rgba(64, 255, 0, 0.69) !important;
-			border: red solid 5px !important;
+				transition: all 0.3s;
+					transform: scale(1.1);
+					background-color: rgba(64, 255, 0, 0.69) !important;
+					border: red solid 5px !important;
 		}
-
+		}
 }
 
+
 ol {
-
-
 	li {
 		margin-right: 25px;
-
-
-
 		&::marker {
 			font-size: small;
 		}
 	}
+}
+.sidebar {
+	transition: all 1s;
+
 }

@@ -7,12 +7,12 @@ const Word = ({ datawords, clear }) => {
 
 	return (
 
-		<div className="  word d-flex p-1 justify-content-between  p-3 m-1 border" style={{ backgroundColor: randomcolor }}>
+		<div className="  word d-flex  justify-content-between p-1 m-1 border" style={{ backgroundColor: randomcolor }}>
 
-			<div className="d-flex">
-			<p className=" m-1" ><small>{datawords.english}</small></p>
-			<p lassName="d-flex align-items-center  my-0">:</p>
-			<p className=" m-1" ><small>{datawords.persian}</small></p>
+			<div className="d-flex p-1 pt-2">
+				<p className=" m-1 " ><small>{datawords.english}</small></p>
+				<p lassName="d-flex align-items-center  my-0">:</p>
+				<p className=" m-1 " ><small>{datawords.persian}</small></p>
 			</div>
 
 

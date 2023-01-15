@@ -16,7 +16,7 @@ const Input = ({ invalue, datawords, checker, clear }) => {
 
 	return (
 		<>
-			<div className='container-fluid d-flex flex-row flex-wrap d-flex justify-content-center p-2'  >
+			<div className='container-fluid d-flex flex-row flex-wrap d-flex justify-content-center p-2 border  bg-danger' >
 				<div className=' border container-fluid py-3' style={{ background: "#d3d3d3", borderRadius: "25px" }}>
 					<Formik
 						// onReset={handleReset}
