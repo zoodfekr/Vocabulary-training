@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import { UseState } from 'react';
 import { Outlet } from 'react-router-dom';
 import '../style/style.scss';
@@ -6,16 +6,22 @@ import { Form, Field, Formik, ErrorMessage } from 'formik';
 import { tranclateSchema } from "../validation/validation";
 import { createword, dbwords, english_tranclate, persian_tranclate, remover, tranclate } from '../services/services';
 import Words from './Words';
-import checker from '../components/Navbar'
+import checker from '../components/Navbar';
+import AppContext from '../context/Context';
 
 
-const Input = ({ invalue, datawords, checker, clear, handleupdate }) => {
+
+const Input = () => {
+
+	const { checker, invalue } = useContext(AppContext);
 
 
 	const initialvalues = { english: "", persian: "" };
 
 	return (
 		<>
+
+
 			<div className='container-fluid d-flex flex-row flex-wrap d-flex justify-content-center p-2 ' >
 				<div className=' border container-fluid py-3' style={{ background: "#d3d3d3", borderRadius: "25px" }}>
 					<Formik
@@ -45,7 +51,7 @@ const Input = ({ invalue, datawords, checker, clear, handleupdate }) => {
 
 
 					<div>
-						<Words datawords={datawords} clear={clear} handleupdate={handleupdate}></Words>
+						<Words ></Words>
 						{/* <Outlet></Outlet> */}
 					</div>
 

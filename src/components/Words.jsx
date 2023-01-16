@@ -1,13 +1,19 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import { dbwords } from "../services/services";
 import Word from './Word';
+import AppContext from '../context/Context';
 
-const Words = ({ datawords, clear, handleupdate }) => {
+const Words = () => {
+
+
+	const { datawords } = useContext(AppContext);
+
+
 
 	return (
 
-		<div className=" border  border-info words" style={{ borderRadius: "25px" }}>
 
+		<div className=" border  border-info words" style={{ borderRadius: "25px" }}>
 			<ol className=" justify-content-start d-flex flex-wrap">
 
 				{datawords?.map(datawords => {
@@ -15,7 +21,7 @@ const Words = ({ datawords, clear, handleupdate }) => {
 
 
 						<li style={{ minWidth: "250px" }}>
-							<Word datawords={datawords} clear={clear} handleupdate={handleupdate}></Word>
+							<Word datawords={datawords} ></Word>
 						</li>
 
 					)
@@ -24,6 +30,7 @@ const Words = ({ datawords, clear, handleupdate }) => {
 			</ol>
 
 		</div>
+
 	)
 };
 
