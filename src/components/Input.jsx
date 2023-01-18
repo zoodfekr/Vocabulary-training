@@ -11,7 +11,7 @@ import AppContext from '../context/Context';
 
 
 
-const Input = () => {
+const Input = ({ datawords }) => {
 
 	const { checker, invalue } = useContext(AppContext);
 
@@ -48,10 +48,20 @@ const Input = () => {
 						</Form>
 					</Formik>
 
+					{/*
+					<div className='border border-danger m-2 p-2 d-flex justify-content-center'>
+						<form>
+							<input type="text" ></input>
+							<input type="text" ></input>
+							<button type='submit' >ثبت</button>
+						</form>
+
+					</div> */}
+
 
 
 					<div>
-						<Words ></Words>
+						<Words datawords={datawords}></Words>
 						{/* <Outlet></Outlet> */}
 					</div>
 

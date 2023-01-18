@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { createPortal } from "react-dom"
 import Input from "./components/Input";
 import Words from './components/Words';
@@ -14,6 +14,7 @@ import { tranclateSchema } from "./validation/validation";
 import { createword, dbwords, english_tranclate, persian_tranclate, remover, tranclate, update } from './services/services';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Word_editor from './components/Word_editor';
 
 
 
@@ -24,7 +25,7 @@ const App = () => {
   const [meaning, setmeaning] = useState(null); // کلمه معنی شده از گوگل
   const [datawords, setdatawords] = useState(null); // کلمه های خوانده شده از سرور داخلی
   const [invalue, setinvalue] = useState(null); // خالی کننده مقدار ورودی ها
-
+  const navigate = useNavigate();
 
   //  ترجمه کلمه
   useEffect(() => {
@@ -141,16 +142,26 @@ const App = () => {
   const handleupdate = async (id, data) => {
     try {
       const { status } = await update(id, data);
+
       if (status == 200) {
-        console.log(" کلمه به روز شد ");
+        // console.log(" کلمه به روز شد ");
+        console.log("run run")
         toast.success("کلمه به روز شد  ")
+        navigate('/');
+        try {
+          let { data: words } = await dbwords();
+          setdatawords(words);
+          // setinvalue(null)
+        }
+        catch (err) {
+          console.log("مشکل خواندن دیتا از سرور داخلی");
+        }
+
       }
     } catch {
       console.log("مشکل در به روز رسانی کلمه");
     }
   }
-
-
 
   return (
 
@@ -160,6 +171,7 @@ const App = () => {
         <Route path='/' element={<Navbar />}>
           <Route path='/' element={<Input />}></Route>
           <Route path='/' element={<Words />}></Route>
+          <Route path='/editor/:wid' element={<Word_editor />} />
         </Route>
       </Routes>
     </Appcontext.Provider>

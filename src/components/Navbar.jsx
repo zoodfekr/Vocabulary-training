@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const Navbar = () => {
+const Navbar = ({ datawords }) => {
 
 
 
@@ -28,7 +28,8 @@ const Navbar = () => {
 			</nav >
 
 			<div className='d-flex'>
-				<Input ></Input>
+				{/* <Input datawords={datawords}></Input> */}
+				<Outlet></Outlet>
 			</div>
 
 			<div>

@@ -3,11 +3,13 @@ import { dbwords } from "../services/services";
 import Word from './Word';
 import AppContext from '../context/Context';
 
+
+
+
 const Words = () => {
 
 
 	const { datawords } = useContext(AppContext);
-
 
 
 	return (
@@ -22,6 +24,7 @@ const Words = () => {
 
 						<li style={{ minWidth: "250px" }}>
 							<Word datawords={datawords} ></Word>
+
 						</li>
 
 					)

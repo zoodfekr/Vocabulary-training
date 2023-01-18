@@ -1,24 +1,44 @@
 {
   "words": [
     {
-      "english": "pen",
-      "persian": "خودکار",
+      "english": "Simple ",
+      "persian": "ساده",
       "id": 1
     },
     {
-      "english": "mothera",
-      "persian": "مار",
+      "english": "Powerful ",
+      "persian": "قدرتمند",
       "id": 2
     },
     {
-      "english": "tree",
-      "persian": "درخت من",
+      "english": "Popup ",
+      "persian": "پنجره بازشو",
       "id": 3
+    },
+    {
+      "english": "Component",
+      "persian": "مولفه",
+      "id": 4
+    },
+    {
+      "english": "mother",
+      "persian": "مادر",
+      "id": 5
+    },
+    {
+      "english": "post",
+      "persian": "پست",
+      "id": 8
+    },
+    {
+      "english": "cat",
+      "persian": "گربه",
+      "id": 9
     },
     {
       "english": "this",
       "persian": "این",
-      "id": 4
+      "id": 10
     }
   ]
 }
