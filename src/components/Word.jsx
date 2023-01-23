@@ -15,8 +15,6 @@ const Word = ({ datawords }) => {
 
 
 	const form = <div className='  m-2  d-flex  w-100 justify-content-between'>
-
-
 		<div className=" d-flex justify-content-center align-items-center">
 			<p className="  ">{datawords.english}</p>
 			<p>:</p>
@@ -27,7 +25,6 @@ const Word = ({ datawords }) => {
 			<Link to={`/editor/${datawords.id}`} className="btn word-btn-blue" title="ویرایش کلمه"><HiOutlinePencil></HiOutlinePencil></Link>
 			<a className="btn p-0 word-btn-red" title="delete" onClick={() => clear(datawords.id)}> <HiTrash></HiTrash> </a>
 		</div>
-
 
 	</div >
 

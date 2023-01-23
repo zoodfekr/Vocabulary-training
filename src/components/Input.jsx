@@ -1,6 +1,4 @@
-import React, { useEffect, useState, useRef, useContext } from 'react';
-import { UseState } from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { useEffect, useState, useRef, useContext, lazy, Suspense } from 'react';
 import '../style/style.scss';
 import { Form, Field, Formik, ErrorMessage } from 'formik';
 import { tranclateSchema } from "../validation/validation";
@@ -11,21 +9,18 @@ import AppContext from '../context/Context';
 
 
 
-const Input = ({ datawords }) => {
+const Input = () => {
 
 	const { checker, invalue } = useContext(AppContext);
-
 
 	const initialvalues = { english: "", persian: "" };
 
 	return (
 		<>
 
-
 			<div className='container-fluid d-flex flex-row flex-wrap d-flex justify-content-center p-2 ' >
-				<div className=' border container-fluid py-3' style={{ background: "#d3d3d3", borderRadius: "25px" }}>
+				<div className=' border container-fluid py-3 input-bg' >
 					<Formik
-						// onReset={handleReset}
 						initialValues={initialvalues}
 						validationSchema={tranclateSchema}
 						onSubmit={async (values, { resetForm }) => {
@@ -36,7 +31,6 @@ const Input = ({ datawords }) => {
 
 						<Form >
 							<div className='d-flex my-2'>
-
 								<Field name="english" className='form-control ltr m-1 input' placeholder="english" value={invalue}></Field>
 								<ErrorMessage name="english"
 									render={(msg) => (<small className="text-danger position-absolute my-4 py-3">{msg}</small>)} />
@@ -48,22 +42,12 @@ const Input = ({ datawords }) => {
 						</Form>
 					</Formik>
 
-					{/*
-					<div className='border border-danger m-2 p-2 d-flex justify-content-center'>
-						<form>
-							<input type="text" ></input>
-							<input type="text" ></input>
-							<button type='submit' >ثبت</button>
-						</form>
-
-					</div> */}
-
-
 
 					<div>
-						<Words datawords={datawords}></Words>
-						{/* <Outlet></Outlet> */}
+						<Words ></Words>
+
 					</div>
+
 
 
 				</div>

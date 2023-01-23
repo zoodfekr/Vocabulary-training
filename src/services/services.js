@@ -4,7 +4,6 @@ import axios from "axios";
 
 // tranclate - googleAPI
 export const english_tranclate = (word) => {
-
 	if (word != null) {
 		return axios.get(`https://translate.googleapis.com/translate_a/single`, {
 			params: {
@@ -20,7 +19,6 @@ export const english_tranclate = (word) => {
 };
 
 export const persian_tranclate = (word) => {
-	// console.log("معنی کننده فارسی", word)
 	if (word != null) {
 		return axios.get(`https://translate.googleapis.com/translate_a/single`, {
 			params: {
@@ -32,12 +30,11 @@ export const persian_tranclate = (word) => {
 			}
 		})
 	}
-	return new Promise((resolve, reject) => reject([]));
+	// return new Promise((resolve, reject) => reject([]));
 };
 
 //local server
 // return all words
-
 export const dbwords = () => {
 	return axios.get(`http://localhost:9000/words`);
 }
@@ -47,14 +44,11 @@ export const word_info = (id) => {
 	return axios.get(`http://localhost:9000/words/${id}`)
 }
 
-// }
-
 // post new word
 export const createword = (data) => {
 	const url = `http://localhost:9000/words`;
 	return axios.post(url, data);
 };
-
 
 // delete word
 export const remover = (id) => {

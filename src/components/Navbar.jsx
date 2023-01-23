@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, Suspense } from 'react';
 import { UseState } from 'react';
 import { Outlet } from 'react-router-dom';
 import '../style/style.scss';
@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const Navbar = ({ datawords }) => {
+const Navbar = () => {
 
 
 
@@ -28,8 +28,9 @@ const Navbar = ({ datawords }) => {
 			</nav >
 
 			<div className='d-flex'>
-				{/* <Input datawords={datawords}></Input> */}
+
 				<Outlet></Outlet>
+
 			</div>
 
 			<div>
@@ -40,9 +41,9 @@ const Navbar = ({ datawords }) => {
 					newestOnTop={false}
 					closeOnClick
 					rtl={false}
-					pauseOnFocusLoss
+					// pauseOnFocusLoss
 					draggable
-					pauseOnHover
+					// pauseOnHover
 					theme="colored"
 				/>
 			</div>

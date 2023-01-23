@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { createPortal } from "react-dom"
 import Input from "./components/Input";
@@ -15,12 +15,10 @@ import { createword, dbwords, english_tranclate, persian_tranclate, remover, tra
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Word_editor from './components/Word_editor';
-
-
+import Spiner from './components/Preloader';
+import Error from './components/Error';
 
 const App = () => {
-
-
   const [word, setWord] = useState(null); //کلمه دریافتی از کاربر
   const [meaning, setmeaning] = useState(null); // کلمه معنی شده از گوگل
   const [datawords, setdatawords] = useState(null); // کلمه های خوانده شده از سرور داخلی
@@ -38,9 +36,11 @@ const App = () => {
         if (word.english && !word.persian) {
           setinvalue("");
           try {
-            let { data: per } = await english_tranclate(word.english)
+
+            let { data: per, status } = await english_tranclate(word.english)
             setmeaning({ english: word.english, persian: per[0][0][0] })
             setinvalue(null);
+            console.log(status)
 
           } catch (err) {
             setinvalue(null);
@@ -64,32 +64,24 @@ const App = () => {
     };
     fetchData_google();
   }, [word]);
-
   // ثبت و خواندن اطلاعات از  سرور داخلی
   useEffect(() => {
     setmeaning(null);
-
     const creator = async () => {
       if (meaning != null && meaning.english != meaning.persian) {
         try {
-
-          // const { status } = await toast.promise(createword(meaning))
           const { status } = await createword(meaning);
           if (status == 201) {
             toast.success("کلمه ساخته شد")
             console.log("کلمه ثبت شد");
             setinvalue(null);
           } else {
-            // toast.error("کلمه ساخته نشد");
             console.log("ساخته نشد")
-
           }
-
         } catch (err) {
           console.log("مشکل ثبت در سرور داخلی");
         }
       }
-
       if (meaning == null) {
         try {
           let { data: words } = await dbwords();
@@ -103,7 +95,6 @@ const App = () => {
     };
     creator()
   }, [meaning]);
-
   //حذف کننده کلمه
   const clear = async (id) => {
     try {
@@ -113,7 +104,6 @@ const App = () => {
         try {
           let { data: words } = await dbwords();
           setdatawords(words);
-          // alert("کلمات از سرور خوانده شد")
         }
         catch (err) {
           console.log("مشکل خواندن دیتا از سرور داخلی");
@@ -123,7 +113,6 @@ const App = () => {
       console.log("مشکل در حذف کلمه");
     }
   }
-
   // چک کننده کلمات تکراری
   const checker = (value) => {
     let ebank = datawords.map(x => x.english);
@@ -137,46 +126,42 @@ const App = () => {
       setinvalue(null);
     }
   }
-
   //به روزرسانی کلمه
   const handleupdate = async (id, data) => {
     try {
       const { status } = await update(id, data);
-
       if (status == 200) {
-        // console.log(" کلمه به روز شد ");
-        console.log("run run")
         toast.success("کلمه به روز شد  ")
         navigate('/');
         try {
           let { data: words } = await dbwords();
           setdatawords(words);
-          // setinvalue(null)
         }
         catch (err) {
           console.log("مشکل خواندن دیتا از سرور داخلی");
         }
-
       }
     } catch {
       console.log("مشکل در به روز رسانی کلمه");
     }
   }
+  // throw new Error("خودمان خطا ایجاد کردیم");
+
 
   return (
-
-
     <Appcontext.Provider value={{ datawords, clear, checker, invalue, handleupdate }}>
+
       <Routes>
         <Route path='/' element={<Navbar />}>
           <Route path='/' element={<Input />}></Route>
           <Route path='/' element={<Words />}></Route>
           <Route path='/editor/:wid' element={<Word_editor />} />
         </Route>
+
+        <Route path="*" element={<Error />} />
       </Routes>
-    </Appcontext.Provider>
 
-
+    </Appcontext.Provider >
   )
 };
 
