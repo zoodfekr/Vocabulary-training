@@ -7,6 +7,8 @@ import Popup from "reactjs-popup";
 import { Link, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { update, word_info } from "../services/services";
 import { ToastContainer, toast } from 'react-toastify';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 const Word_editor = () => {
 
 	const { handleupdate } = useContext(AppContext);
@@ -58,11 +60,14 @@ const Word_editor = () => {
 	if (word) {
 
 		return (
-
+			<HelmetProvider>
+				<Helmet>
+					<title>ویرایش کلمه</title>
+				</Helmet>
 			<div className="container border border-danger m-5 p-5 bg-dark" style={{ borderRadius: "25px" }}>
 				{formik}
 			</div>
-
+			</HelmetProvider>
 		)
 	}
 

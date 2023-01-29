@@ -6,6 +6,9 @@ import { createword, dbwords, english_tranclate, persian_tranclate, remover, tra
 import Words from './Words';
 import checker from '../components/Navbar';
 import AppContext from '../context/Context';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Button from '@mui/material/Button';
+import { TextField } from '@mui/material';
 
 
 
@@ -17,6 +20,14 @@ const Input = () => {
 
 	return (
 		<>
+			<HelmetProvider>
+				<Helmet>		  <title>برنامه تمرین لغت</title>
+					<link rel="canonical" href="https://www.tacobell.com/" />
+				</Helmet>
+
+
+			</HelmetProvider>
+
 
 			<div className='container-fluid d-flex flex-row flex-wrap d-flex justify-content-center p-2 ' >
 				<div className=' border container-fluid py-3 input-bg' >
@@ -31,14 +42,24 @@ const Input = () => {
 
 						<Form >
 							<div className='d-flex my-2'>
+
+								{/* <TextField id="outlined-basic"
+									label="english"
+									variant="outlined"
+									name="english"
+									className='form-control ltr m-1 input'
+									value={invalue} /> */}
+
 								<Field name="english" className='form-control ltr m-1 input' placeholder="english" value={invalue}></Field>
 								<ErrorMessage name="english"
 									render={(msg) => (<small className="text-danger position-absolute my-4 py-3">{msg}</small>)} />
 								<Field name="persian" className='form-control m-1 input' placeholder="فارسی" value={invalue}></Field>
+
 								<ErrorMessage name="persian"
 									render={(msg) => (<small className="text-danger position-absolute">{msg}</small>)} />
 							</div>
-							<button type="submit" value="ثبت" className="btn btn-primary w-100 my-2">ثبت</button>
+							<Button type="submit" value="ثبت" variant="contained" className="btn btn-primary w-100 my-2">ثبت</Button>
+
 						</Form>
 					</Formik>
 
@@ -47,8 +68,6 @@ const Input = () => {
 						<Words ></Words>
 
 					</div>
-
-
 
 				</div>
 			</div>
