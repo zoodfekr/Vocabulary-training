@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Word = ({ datawords }) => {
 	const { handleupdate, clear, } = useContext(AppContext);
-	const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.34`;
+	const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.45`;
 	const [disable, setdisbale] = useState(true);
 	const update = () => setdisbale(!disable);
 

@@ -115,6 +115,7 @@ const App = () => {
   }
   // چک کننده کلمات تکراری
   const checker = (value) => {
+    console.log("value:", value)
     let ebank = datawords.map(x => x.english);
     let pbank = datawords.map(x => x.persian);
     setinvalue("");

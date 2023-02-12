@@ -11,7 +11,11 @@ import Logo from './Logo';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import { Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import { RiFileWord2Fill } from "react-icons/ri";
 
 const Navbar = () => {
 
@@ -19,19 +23,19 @@ const Navbar = () => {
 
 	return (
 		<>
-			<nav class="navbar bg-dark navbar-dark navbar-expand-lg   shadow-lg" dir="rtl" >
+			<AppBar>
+				<Toolbar>
+					<Typography variant="h6" component="div">
+						<RiFileWord2Fill style={{ color: "yellow", fontSize: '50px' }} className='mx-2'></RiFileWord2Fill>
+						تمرین لغت
+					</Typography>
+				</Toolbar>
+			</AppBar>
 
-				<div class="container" id="top">
-					<Logo />
-					{/* {location.pathname == "/" ? <Search query={query} finder={finder} /> : null} */}
-				</div >
-			</nav >
-
-			<div className='d-flex'>
+			<Box sx={{ my: 8 }}>
 
 				<Outlet></Outlet>
 
-			</div>
 
 			<div>
 				<ToastContainer
@@ -47,6 +51,11 @@ const Navbar = () => {
 					theme="colored"
 				/>
 			</div>
+
+			</Box>
+
+
+
 		</>
 
 	)

@@ -43,12 +43,6 @@ const Input = () => {
 						<Form >
 							<div className='d-flex my-2'>
 
-								{/* <TextField id="outlined-basic"
-									label="english"
-									variant="outlined"
-									name="english"
-									className='form-control ltr m-1 input'
-									value={invalue} /> */}
 
 								<Field name="english" className='form-control ltr m-1 input' placeholder="english" value={invalue}></Field>
 								<ErrorMessage name="english"
