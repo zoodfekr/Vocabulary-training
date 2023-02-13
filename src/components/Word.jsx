@@ -10,18 +10,18 @@ const Word = ({ datawords }) => {
 	const update = () => setdisbale(!disable);
 
 	const stylefont = {
-		fontSize: "15px"
+		fontSize: "15px",
 	}
 
-	const form = <div className='  m-2  d-flex  w-100 justify-content-between'>
-		<div className=" d-flex justify-content-center align-items-center">
+	const form = <div className='  mx-2  d-flex  w-100 justify-content-between p-0'>
+		<div className=" d-flex justify-content-center align-items-center  ">
 			<p className="  " style={stylefont}>{datawords.english}</p>
 			<p>:</p>
 			<p className="" style={stylefont}>{datawords.persian}</p>
 		</div>
 
 		<div className="d-flex  flex-column ">
-			<Link to={`/editor/${datawords.id}`} className="btn word-btn-blue" title="ویرایش کلمه"><HiOutlinePencil></HiOutlinePencil></Link>
+			<Link to={`/editor/${datawords.id}`} className="btn word-btn-blue p-0" title="ویرایش کلمه"><HiOutlinePencil></HiOutlinePencil></Link>
 			<a className="btn p-0 word-btn-red" title="delete" onClick={() => clear(datawords.id)}> <HiTrash></HiTrash> </a>
 		</div>
 
@@ -30,7 +30,7 @@ const Word = ({ datawords }) => {
 
 	return (
 		<div className="  word d-flex  justify-content-between p-1 m-1 " style={{ backgroundColor: randomcolor }}>
-			<div className="d-flex  pt-2  w-100" >
+			<div className="d-flex  pt-0  w-100  " >
 				{form}
 			</div>
 		</div >
