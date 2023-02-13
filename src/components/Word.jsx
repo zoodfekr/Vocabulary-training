@@ -1,9 +1,6 @@
 import { HiTrash, HiOutlinePencil, HiSave } from "react-icons/hi";
-import { useContext, useEffect, useReducer, useRef, useState } from "react";
-import { Form, Field, Formik, ErrorMessage } from 'formik';
-import { tranclateSchema } from "../validation/validation";
+import { useContext, useState } from "react";
 import AppContext from '../context/Context';
-import Popup from "reactjs-popup";
 import { Link } from "react-router-dom";
 
 const Word = ({ datawords }) => {
@@ -12,13 +9,15 @@ const Word = ({ datawords }) => {
 	const [disable, setdisbale] = useState(true);
 	const update = () => setdisbale(!disable);
 
-
+	const stylefont = {
+		fontSize: "15px"
+	}
 
 	const form = <div className='  m-2  d-flex  w-100 justify-content-between'>
 		<div className=" d-flex justify-content-center align-items-center">
-			<p className="  ">{datawords.english}</p>
+			<p className="  " style={stylefont}>{datawords.english}</p>
 			<p>:</p>
-			<p className="">{datawords.persian}</p>
+			<p className="" style={stylefont}>{datawords.persian}</p>
 		</div>
 
 		<div className="d-flex  flex-column ">

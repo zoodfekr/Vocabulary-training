@@ -4,12 +4,10 @@ import { createPortal } from "react-dom"
 import Input from "./components/Input";
 import Words from './components/Words';
 import Navbar from './components/Navbar';
-// import { Portal } from 'react-portal';
 import Appcontext from './context/Context';
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import './style/style.scss';
-import { Form, Field, Formik, ErrorMessage } from 'formik';
 import { tranclateSchema } from "./validation/validation";
 import { createword, dbwords, english_tranclate, persian_tranclate, remover, tranclate, update } from './services/services';
 import { ToastContainer, toast } from 'react-toastify';
@@ -17,6 +15,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import Word_editor from './components/Word_editor';
 import Spiner from './components/Preloader';
 import Error from './components/Error';
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { purple } from '@mui/material/colors';
+import createCache from "@emotion/cache";
+import { prefixer } from "stylis";
+import rtlPlugin from "stylis-plugin-rtl";
+import { CssBaseline } from '@mui/material';
+import { CacheProvider } from '@emotion/react';
 
 const App = () => {
   const [word, setWord] = useState(null); //کلمه دریافتی از کاربر
@@ -146,22 +151,45 @@ const App = () => {
       console.log("مشکل در به روز رسانی کلمه");
     }
   }
-  // throw new Error("خودمان خطا ایجاد کردیم");
+  // theme
+  const [mode, setmode] = useState(true);
+  const theme = createTheme({
+    direction: "rtl",
+    typography: {
+      fontSize: 12,
+      fontFamily: [
+        'vazir',
+        'IranNastaliq',
+        'B_Mitra_Bold'
+      ].join(','),
+    },
+    palette: {
+      mode: mode ? "light" : "dark",
+    }
+  })
+  const cachertl = createCache({
+    key: "muirtl",
+    stylisPlugins: [prefixer, rtlPlugin]
+  })
+
 
 
   return (
-    <Appcontext.Provider value={{ datawords, clear, checker, invalue, handleupdate }}>
+    <Appcontext.Provider value={{ datawords, clear, checker, invalue, handleupdate, setmode }}>
 
-      <Routes>
-        <Route path='/' element={<Navbar />}>
-          <Route path='/' element={<Input />}></Route>
-          <Route path='/' element={<Words />}></Route>
-          <Route path='/editor/:wid' element={<Word_editor />} />
-        </Route>
-
-        <Route path="*" element={<Error />} />
-      </Routes>
-
+      <CacheProvider value={cachertl}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Routes>
+            <Route path='/' element={<Navbar />}>
+              <Route path='/' element={<Input />}></Route>
+              <Route path='/' element={<Words />}></Route>
+              <Route path='/editor/:wid' element={<Word_editor />} />
+            </Route>
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </ThemeProvider>
+      </CacheProvider>
     </Appcontext.Provider >
   )
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, Suspense } from 'react';
+import React, { useEffect, useState, useRef, Suspense, useContext } from 'react';
 import { UseState } from 'react';
 import { Outlet } from 'react-router-dom';
 import '../style/style.scss';
@@ -16,8 +16,12 @@ import Toolbar from '@mui/material/Toolbar';
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { RiFileWord2Fill } from "react-icons/ri";
+import AppContext from '../context/Context';
+import AntSwitch from './mui/AntSwitch'
 
 const Navbar = () => {
+
+	const { setmode } = useContext(AppContext);
 
 
 
@@ -25,9 +29,12 @@ const Navbar = () => {
 		<>
 			<AppBar>
 				<Toolbar>
-					<Typography variant="h6" component="div">
+					<Typography variant="h6" component="div" className=''>
 						<RiFileWord2Fill style={{ color: "yellow", fontSize: '50px' }} className='mx-2'></RiFileWord2Fill>
 						تمرین لغت
+					</Typography>
+					<Typography component="div" className='mx-5'>
+						<AntSwitch onClick={() => setmode((prevLoading) => !prevLoading)}></AntSwitch>
 					</Typography>
 				</Toolbar>
 			</AppBar>
@@ -35,6 +42,7 @@ const Navbar = () => {
 			<Box sx={{ my: 8 }}>
 
 				<Outlet></Outlet>
+
 
 
 			<div>

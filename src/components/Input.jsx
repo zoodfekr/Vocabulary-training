@@ -9,6 +9,7 @@ import AppContext from '../context/Context';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
+import { Outlet } from 'react-router-dom';
 
 
 
@@ -21,50 +22,54 @@ const Input = () => {
 	return (
 		<>
 			<HelmetProvider>
-				<Helmet>		  <title>برنامه تمرین لغت</title>
+				<Helmet>		  <title> تمرین لغت</title>
 					<link rel="canonical" href="https://www.tacobell.com/" />
 				</Helmet>
 
 
-			</HelmetProvider>
 
 
-			<div className='container-fluid d-flex flex-row flex-wrap d-flex justify-content-center p-2 ' >
-				<div className=' border container-fluid py-3 input-bg' >
-					<Formik
-						initialValues={initialvalues}
-						validationSchema={tranclateSchema}
-						onSubmit={async (values, { resetForm }) => {
-							await checker(values)
-							resetForm()
-						}}
-					>
-
-						<Form >
-							<div className='d-flex my-2'>
+				<div className='container-fluid d-flex flex-row flex-wrap d-flex justify-content-center p-2 ' >
+					<div className=' container-fluid py-3 input-bg' >
 
 
-								<Field name="english" className='form-control ltr m-1 input' placeholder="english" value={invalue}></Field>
-								<ErrorMessage name="english"
-									render={(msg) => (<small className="text-danger position-absolute my-4 py-3">{msg}</small>)} />
-								<Field name="persian" className='form-control m-1 input' placeholder="فارسی" value={invalue}></Field>
 
-								<ErrorMessage name="persian"
-									render={(msg) => (<small className="text-danger position-absolute">{msg}</small>)} />
-							</div>
-							<Button type="submit" value="ثبت" variant="contained" className="btn btn-primary w-100 my-2">ثبت</Button>
+						<div className='border p-2' style={{ borderRadius: '25px' }}>
+							<Formik
+								initialValues={initialvalues}
+								validationSchema={tranclateSchema}
+								onSubmit={async (values, { resetForm }) => {
+									await checker(values)
+									resetForm()
+								}}
+							>
 
-						</Form>
-					</Formik>
+								<Form >
+									<div className='d-flex my-2'>
+										<Field name="english" className='form-control ltr m-1 input' placeholder="english" value={invalue}></Field>
+										<ErrorMessage name="english"
+											render={(msg) => (<small className="text-danger position-absolute my-4 py-3">{msg}</small>)} />
+										<Field name="persian" className='form-control m-1 input' placeholder="فارسی" value={invalue}></Field>
 
+										<ErrorMessage name="persian"
+											render={(msg) => (<small className="text-danger position-absolute">{msg}</small>)} />
+									</div>
+									<Button type="submit" value="ثبت" variant="contained" className="btn btn-primary w-100 my-2">ثبت</Button>
 
-					<div>
-						<Words ></Words>
+								</Form>
+							</Formik>
+
+						</div>
+
+						<div className=' mt-2' style={{ borderRadius: '25px' }}>
+							<Words ></Words>
+
 
 					</div>
 
 				</div>
 			</div>
+			</HelmetProvider>
 		</>
 	)
 };

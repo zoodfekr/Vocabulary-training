@@ -1,14 +1,55 @@
 @font-face {
+	font-family: "vazir";
+	src: url("../../public/fonts/Vazir.eot");
+	src: url("../../public/fonts/Vazir.eot?#iefix") format("embedded-opentype"),
+		url("../../public/fonts/Vazir.woff2") format("woff2"),
+		url("../../public/fonts/Vazir.woff") format("woff"),
+		url("../../public/fonts/Vazir.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "roboto";
+	src: url("../../public/fonts/Roboto-Regular.eot");
+	src: url("../../public/fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+		url("../../public/fonts/Roboto-Regular.woff2") format("woff2"),
+		url("../../public/fonts/Roboto-Regular.woff") format("woff"),
+		url("../../public/fonts/Roboto-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "B_Mitra_Bold";
+	src: url("../../public/fonts/B_Mitra_Bold.ttf") format("ttf");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+@font-face {
+	font-family: "IranNastaliq";
+	src: url("../../public/fonts/IranNastaliq.ttf") format("ttf");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
 	font-family: 'B-Mitra';
-	src: local('B-Mitr'), url(../fonts/B-Mitra.ttf) format('truetype');
+	src: local('B-Mitr'), url(../../public/fonts/B-Mitra.ttf) format('truetype');
 }
 
 @font-face {
 	font-family: 'B-NAZANIN';
-	src: local('B-NAZANIN'), url(../fonts/B-NAZANIN.ttf) format('truetype');
+	src: local('B-NAZANIN'), url(../../public/fonts/B-NAZANIN.ttf) format('truetype');
 }
 
 body {
+
 	background-color: #426f8500;
 	font-family: B-NAZANIN;
 	// font-size: 1.4rem;
@@ -32,9 +73,9 @@ body {
 	}
 }
 .input-bg {
-	background-color: rgba(108, 108, 109, 0.205);
+background-color: rgba(246, 246, 255, 0.205);
 	border-radius: 25px;
-	margin: 5px;
+	// margin: 5px;
 }
 .word-input {
 
@@ -47,6 +88,11 @@ p {
 }
 
 .words {
+	// border: 2px solid red;
+		border-radius: 25px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around !important;
 	.word {
 		border-radius: 20px;
 		transition: all 1s;

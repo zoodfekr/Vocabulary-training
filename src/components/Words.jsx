@@ -6,7 +6,7 @@ const Words = () => {
 	const { datawords } = useContext(AppContext);
 	return (
 
-		<div className=" border  border-info words" style={{ borderRadius: "25px" }}>
+		<div className="words">
 			<ol className=" justify-content-start d-flex flex-wrap p-0">
 				{datawords?.map(datawords => {
 					return (
