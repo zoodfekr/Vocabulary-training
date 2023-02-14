@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { HiSpeakerWave } from "react-icons/hi2";
 
 const Word = ({ datawords }) => {
-	const { handleupdate, clear, } = useContext(AppContext);
+	const { handleupdate, clear_s1 } = useContext(AppContext);
 	const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.45`;
 	const [disable, setdisbale] = useState(true);
 	const update = () => setdisbale(!disable);
@@ -33,7 +33,7 @@ const Word = ({ datawords }) => {
 
 		<div className="d-flex  flex-row justify-content-end ">
 			<Link to={`/editor/${datawords.id}`} className="btn word-btn-blue p-0" title="ویرایش کلمه"><HiOutlinePencil></HiOutlinePencil></Link>
-			<a className="btn p-0 word-btn-red mx-2" title="delete" onClick={() => clear(datawords.id)}> <HiTrash></HiTrash> </a>
+			<a className="btn p-0 word-btn-red mx-2" title="delete" onClick={() => clear_s1(datawords.id)}> <HiTrash></HiTrash> </a>
 			<a className="btn p-0 word-btn-green" onClick={reader}><HiSpeakerWave></HiSpeakerWave></a>
 		</div>
 

@@ -22,6 +22,7 @@ import { prefixer } from "stylis";
 import rtlPlugin from "stylis-plugin-rtl";
 import { CssBaseline } from '@mui/material';
 import { CacheProvider } from '@emotion/react';
+import { confirmAlert } from 'react-confirm-alert';
 
 const App = () => {
   const [word, setWord] = useState(null); //کلمه دریافتی از کاربر
@@ -100,8 +101,44 @@ const App = () => {
     };
     creator()
   }, [meaning]);
+
   //حذف کننده کلمه
-  const clear = async (id) => {
+
+  const clear_s1 = (id) => {
+    const container = document.getElementById("portal")
+    confirmAlert({
+      customUI: ({ onClose }) => {
+        return (
+
+          createPortal(< div className='custom-ui ' >
+            <div className='border border-danger p-5 container' style={{
+              backgroundColor: "#E5E8E8",
+              borderRadius: "25px"
+            }} dir='rtl'>
+              {/* <h3 className='text-danger'>{`حذف ${event.fullname}`}</h3> */}
+              <p className='text-dark'>آیا مطمئن هستید؟</p>
+
+              <button className='btn btn-primary mx-1' onClick={onClose}>خیر</button>
+              <button
+                className='btn btn-danger mx-1'
+                onClick={() => {
+                  clear_s2(id); onClose();
+                }}
+              >
+                بله
+              </button>
+            </div>
+          </div >, container)
+
+
+
+        );
+      }
+    });
+
+  };
+
+  const clear_s2 = async (id) => {
     try {
       const { status } = await remover(id);
       if (status == 200) {
@@ -118,6 +155,8 @@ const App = () => {
       console.log("مشکل در حذف کلمه");
     }
   }
+
+
   // چک کننده کلمات تکراری
   const checker = (value) => {
     console.log("value:", value)
@@ -175,7 +214,7 @@ const App = () => {
 
 
   return (
-    <Appcontext.Provider value={{ datawords, clear, checker, invalue, handleupdate, setmode }}>
+    <Appcontext.Provider value={{ datawords, clear_s1, checker, invalue, handleupdate, setmode }}>
 
       <CacheProvider value={cachertl}>
         <ThemeProvider theme={theme}>
