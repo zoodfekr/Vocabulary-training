@@ -2,6 +2,7 @@ import { HiTrash, HiOutlinePencil, HiSave } from "react-icons/hi";
 import { useContext, useState } from "react";
 import AppContext from '../context/Context';
 import { Link } from "react-router-dom";
+import { HiSpeakerWave } from "react-icons/hi2";
 
 const Word = ({ datawords }) => {
 	const { handleupdate, clear, } = useContext(AppContext);
@@ -13,16 +14,27 @@ const Word = ({ datawords }) => {
 		fontSize: "15px",
 	}
 
-	const form = <div className='  mx-2  d-flex  w-100 justify-content-between p-0'>
-		<div className=" d-flex justify-content-center align-items-center  ">
+	const reader = () => {
+		let utterance = new SpeechSynthesisUtterance(datawords.english);
+		utterance.volume = 1; // From 0 to 1
+		utterance.rate = 0.5; // From 0.1 to 10
+		utterance.pitch = 0; // From 0 to 2
+		utterance.lang = 'en';
+		speechSynthesis.speak(utterance);
+	}
+
+	const form = <div className='  mx-2  d-flex  w-100 justify-content-between p-0 flex-column '>
+
+		<div className=" d-flex justify-content-start align-items-center p-0 ">
 			<p className="  " style={stylefont}>{datawords.english}</p>
 			<p>:</p>
 			<p className="" style={stylefont}>{datawords.persian}</p>
 		</div>
 
-		<div className="d-flex  flex-column ">
+		<div className="d-flex  flex-row justify-content-end ">
 			<Link to={`/editor/${datawords.id}`} className="btn word-btn-blue p-0" title="ویرایش کلمه"><HiOutlinePencil></HiOutlinePencil></Link>
-			<a className="btn p-0 word-btn-red" title="delete" onClick={() => clear(datawords.id)}> <HiTrash></HiTrash> </a>
+			<a className="btn p-0 word-btn-red mx-2" title="delete" onClick={() => clear(datawords.id)}> <HiTrash></HiTrash> </a>
+			<a className="btn p-0 word-btn-green" onClick={reader}><HiSpeakerWave></HiSpeakerWave></a>
 		</div>
 
 	</div >

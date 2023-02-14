@@ -19,6 +19,9 @@ const Input = () => {
 
 	const initialvalues = { english: "", persian: "" };
 
+
+
+
 	return (
 		<>
 			<HelmetProvider>
@@ -58,17 +61,16 @@ const Input = () => {
 
 								</Form>
 							</Formik>
-
 						</div>
+
+
 
 						<div className=' mt-2' style={{ borderRadius: '25px' }}>
 							<Words ></Words>
-
+						</div>
 
 					</div>
-
 				</div>
-			</div>
 			</HelmetProvider>
 		</>
 	)

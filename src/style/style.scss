@@ -38,6 +38,7 @@
 	font-style: normal;
 	font-display: swap;
 }
+
 @font-face {
 	font-family: 'B-Mitra';
 	src: local('B-Mitr'), url(../../public/fonts/B-Mitra.ttf) format('truetype');
@@ -53,7 +54,7 @@ body {
 	background-color: #426f8500;
 	font-family: B-NAZANIN;
 	// font-size: 1.4rem;
-		min-width: 400px;
+	min-width: 400px;
 }
 
 .rtl {
@@ -72,11 +73,13 @@ body {
 		box-shadow: 0px 0px 5px red !important;
 	}
 }
+
 .input-bg {
-background-color: rgba(246, 246, 255, 0.205);
+	background-color: rgba(246, 246, 255, 0.205);
 	border-radius: 25px;
 	// margin: 5px;
 }
+
 .word-input {
 
 	font-weight: bold;
@@ -89,17 +92,19 @@ p {
 
 .words {
 	// border: 2px solid red;
-		border-radius: 25px;
+	border-radius: 25px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-around !important;
+
 	.word {
 		border-radius: 20px;
 		transition: all 1s;
 		font-size: 1.2rem;
-			display: flex;
+		display: flex;
 			justify-content: center;
-			.word-input {
+
+		.word-input {
 				border-style: 0.5px solid;
 				background-color: rgba(0, 0, 0, 0);
 				margin: 0px;
@@ -107,19 +112,23 @@ p {
 				// font-size: 1.1rem;
 				font-weight: bold
 			}
+
 		&:hover {
-			border: red 2px solid;
+			// border: red 2px solid;
 				transition: all 0.2s;
-				transform: scale(1.1);
-					// box-shadow: 0px 0px 10px rgb(23, 248, 34);
+			// transform: scale(1.1);
+				// box-shadow: 0px 0px 10px rgb(23, 248, 34);
 			}
 
-			.word-btn-red:hover {
-				background-color: red;
-			}
+				.word-btn-red:hover {
+					background-color: red;
+				}
 
-			.word-btn-blue:hover {
-				background-color: rgb(0, 195, 255);
+				.word-btn-green:hover {
+					background-color: rgb(80, 246, 3);
+				}
+				.word-btn-blue:hover {
+					background-color: rgb(0, 195, 255);
 		}
 		}
 }
@@ -130,7 +139,7 @@ ol {
 		margin-right: 25px;
 
 		&::marker {
-			font-size: small;
+			font-size: 10px !important;
 		}
 	}
 }
