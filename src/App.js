@@ -1,22 +1,17 @@
 import React, { Suspense } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import { createPortal } from "react-dom"
 import Input from "./components/Input";
 import Words from './components/Words';
 import Navbar from './components/Navbar';
 import Appcontext from './context/Context';
 import { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
 import './style/style.scss';
-import { tranclateSchema } from "./validation/validation";
 import { createword, dbwords, english_tranclate, persian_tranclate, remover, tranclate, update } from './services/services';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Word_editor from './components/Word_editor';
-import Spiner from './components/Preloader';
 import Error from './components/Error';
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { purple } from '@mui/material/colors';
 import createCache from "@emotion/cache";
 import { prefixer } from "stylis";
 import rtlPlugin from "stylis-plugin-rtl";
@@ -104,19 +99,18 @@ const App = () => {
 
   //حذف کننده کلمه
 
-  const clear_s1 = (id) => {
-    const container = document.getElementById("portal")
+  const clear_s1 = id => {
+
     confirmAlert({
       customUI: ({ onClose }) => {
         return (
-
-          createPortal(< div className='custom-ui ' >
-            <div className='border border-danger p-5 container' style={{
+          < div className='custom-ui' >
+            <div className='border border-danger p-5 container custom-ui-message' style={{
               backgroundColor: "#E5E8E8",
               borderRadius: "25px"
             }} dir='rtl'>
-              {/* <h3 className='text-danger'>{`حذف ${event.fullname}`}</h3> */}
-              <p className='text-dark'>آیا مطمئن هستید؟</p>
+              <h3 className='text-danger'>{`در حال حذف کلمه هستید!!!`}</h3>
+              <p className='text-dark'>آیا اطمینان دارید؟</p>
 
               <button className='btn btn-primary mx-1' onClick={onClose}>خیر</button>
               <button
@@ -128,10 +122,7 @@ const App = () => {
                 بله
               </button>
             </div>
-          </div >, container)
-
-
-
+          </div >
         );
       }
     });

@@ -18,12 +18,12 @@ const Word = ({ datawords }) => {
 		let utterance = new SpeechSynthesisUtterance(datawords.english);
 		utterance.volume = 1; // From 0 to 1
 		utterance.rate = 0.5; // From 0.1 to 10
-		utterance.pitch = 0; // From 0 to 2
+		utterance.pitch = 2; // From 0 to 2
 		utterance.lang = 'en';
 		speechSynthesis.speak(utterance);
 	}
 
-	const form = <div className='  mx-2  d-flex  w-100 justify-content-between p-0 flex-column '>
+	const form = <div className='  mx-2  d-flex  w-100 justify-content-between p-0 flex-column'>
 
 		<div className=" d-flex justify-content-start align-items-center p-0 ">
 			<p className="  " style={stylefont}>{datawords.english}</p>

@@ -52,9 +52,10 @@
 body {
 
 	background-color: #426f8500;
-	font-family: B-NAZANIN;
+	// font-family: B-NAZANIN;
 	// font-size: 1.4rem;
-	min-width: 400px;
+	// min-width: 400px;
+		// border: 2px solid red;
 }
 
 .rtl {
@@ -93,7 +94,7 @@ p {
 .words {
 	// border: 2px solid red;
 	border-radius: 25px;
-		display: flex;
+	display: flex;
 		flex-wrap: wrap;
 		justify-content: space-around !important;
 
@@ -102,10 +103,10 @@ p {
 		transition: all 1s;
 		font-size: 1.2rem;
 		display: flex;
-			justify-content: center;
+		justify-content: center;
 
 		.word-input {
-				border-style: 0.5px solid;
+			border-style: 0.5px solid;
 				background-color: rgba(0, 0, 0, 0);
 				margin: 0px;
 				background-color: rgb(255, 0, 0);
@@ -115,9 +116,9 @@ p {
 
 		&:hover {
 			// border: red 2px solid;
-				transition: all 0.2s;
+			transition: all 0.2s;
 			// transform: scale(1.1);
-				// box-shadow: 0px 0px 10px rgb(23, 248, 34);
+			// box-shadow: 0px 0px 10px rgb(23, 248, 34);
 			}
 
 				.word-btn-red:hover {
@@ -127,16 +128,23 @@ p {
 				.word-btn-green:hover {
 					background-color: rgb(80, 246, 3);
 				}
+
 				.word-btn-blue:hover {
 					background-color: rgb(0, 195, 255);
 		}
 		}
 }
 
+@media only screen and (max-width: 600px) {
+	li {
+		width: 100% !important;
+	}
+}
 
 ol {
 	li {
 		margin-right: 25px;
+		min-width: 230px;
 
 		&::marker {
 			font-size: 10px !important;
@@ -148,10 +156,32 @@ ol {
 	transition: all 1s;
 
 }
-#portal {
+.custom-ui {
+	height: 100vh;
+	background-color: rgba(255, 127, 127, 0.459);
 	position: fixed;
-	top: 50%;
+	z-index: 500;
+		top: 0;
 	left: 0;
 	right: 0;
 
+	.custom-ui-message {
+	
+			margin-top: 50vh;
+		}
+	}
+	
+	.side-bg {
+		position: absolute;
+		background-image: url('../assets/sidebg.png') !important;
+		background-position: center;
+		// background-clip: content-box;
+	
+		z-index: -500;
+		opacity: 0.5;
+	}
+	
+	.side-icon {
+		color: rgb(5, 5, 5);
+		font-size: 1.5rem;
 }

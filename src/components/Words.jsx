@@ -7,10 +7,10 @@ const Words = () => {
 	return (
 
 		<div className="words">
-			<ol className=" justify-content-start d-flex flex-wrap p-0">
+			<ol className=" justify-content-evenly d-flex flex-wrap p-0 ">
 				{datawords?.map(datawords => {
 					return (
-						<li style={{ minWidth: "280px" }}>
+						<li className=" xs-12 sm-3 li">
 							<Word datawords={datawords} ></Word>
 						</li>
 					)

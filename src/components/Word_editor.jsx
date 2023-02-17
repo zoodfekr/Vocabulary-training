@@ -64,9 +64,12 @@ const Word_editor = () => {
 				<Helmet>
 					<title>ویرایش کلمه</title>
 				</Helmet>
-			<div className="container border border-danger m-5 p-5 bg-dark" style={{ borderRadius: "25px" }}>
-				{formik}
-			</div>
+				<div className=" p-2 editor-box  d-flex justify-content-center">
+
+					<div className="container border border-danger m-1 mt-5  bg-light" style={{ borderRadius: "25px" }}>
+						{formik}
+					</div>
+				</div>
 			</HelmetProvider>
 		)
 	}

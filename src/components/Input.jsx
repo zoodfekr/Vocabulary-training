@@ -13,6 +13,7 @@ import { Outlet } from 'react-router-dom';
 
 
 
+
 const Input = () => {
 
 	const { checker, invalue } = useContext(AppContext);
@@ -62,7 +63,6 @@ const Input = () => {
 								</Form>
 							</Formik>
 						</div>
-
 
 
 						<div className=' mt-2' style={{ borderRadius: '25px' }}>
