@@ -17,12 +17,7 @@ import { Outlet } from 'react-router-dom';
 const Input = () => {
 
 	const { checker, invalue } = useContext(AppContext);
-
-
-
 	const initialvalues = { english: "", persian: "", background: '' };
-
-
 	return (
 		<>
 			<HelmetProvider>
@@ -30,13 +25,8 @@ const Input = () => {
 					<link rel="canonical" href="https://www.tacobell.com/" />
 				</Helmet>
 
-
-
-
 				<div className='container-fluid d-flex flex-row flex-wrap d-flex justify-content-center p-2 ' >
 					<div className=' container-fluid py-3 input-bg' >
-
-
 
 						<div className='border p-2' style={{ borderRadius: '25px' }}>
 							<Formik

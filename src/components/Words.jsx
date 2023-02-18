@@ -3,7 +3,11 @@ import Word from './Word';
 import AppContext from '../context/Context';
 
 const Words = () => {
-	const { datawords } = useContext(AppContext);
+	const { datawords, costomcolor } = useContext(AppContext);
+
+
+
+
 	return (
 
 		<div className="words">
@@ -11,7 +15,7 @@ const Words = () => {
 				{datawords?.map(datawords => {
 					return (
 						<li className=" xs-12 sm-3 li">
-							<Word datawords={datawords} ></Word>
+							<Word datawords={datawords} costomcolor={costomcolor}></Word>
 						</li>
 					)
 				}).reverse()}

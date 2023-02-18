@@ -25,7 +25,7 @@ const App = () => {
   const [datawords, setdatawords] = useState(null); // کلمه های خوانده شده از سرور داخلی
   const [invalue, setinvalue] = useState(null); // خالی کننده مقدار ورودی ها
   const navigate = useNavigate();
-
+  const [wordcolor, setwordcolor] = useState(null); // خالی کننده مقدار ورودی ها
 
   //  ترجمه کلمه
   useEffect(() => {
@@ -206,10 +206,19 @@ const App = () => {
     stylisPlugins: [prefixer, rtlPlugin]
   })
 
+  //مقدار دهی اولیه
+  useEffect(() => {
+    const customcolor = window.localStorage.getItem('word_bgcolor');
+    if (customcolor == null) {
+      console.log("set initial color")
+      window.localStorage.setItem('word_bgcolor', JSON.stringify("colorly"));
+    }
+  }, []);
 
+  const costomcolor = JSON.parse(window.localStorage.getItem('word_bgcolor'));
 
   return (
-    <Appcontext.Provider value={{ datawords, clear_s1, checker, invalue, handleupdate, setmode }}>
+    <Appcontext.Provider value={{ datawords, clear_s1, checker, invalue, handleupdate, setmode, costomcolor, setwordcolor }}>
 
       <CacheProvider value={cachertl}>
         <ThemeProvider theme={theme}>

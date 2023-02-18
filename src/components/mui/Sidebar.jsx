@@ -25,6 +25,7 @@ import AppContext from '../../context/Context';
 import { GiNightSleep } from "react-icons/gi";
 import { GrDocumentTest } from "react-icons/gr";
 import { AiOutlineFileWord } from "react-icons/ai";
+import RadioButtonsGroup from './Radio group';
 
 
 
@@ -164,8 +165,11 @@ export default function PersistentDrawerLeft() {
 						{/* <ListItemButton>
 						</ListItemButton> */}
 					</ListItem>
-					<Divider className='' />
-
+					<Divider className='bg-dark' />
+					<ListItem className=''>
+						<RadioButtonsGroup></RadioButtonsGroup>
+					</ListItem>
+					<Divider className='bg-dark' />
 
 				</List>
 
