@@ -6,7 +6,9 @@ import { HiSpeakerWave } from "react-icons/hi2";
 
 const Word = ({ datawords }) => {
 	const { handleupdate, clear_s1 } = useContext(AppContext);
+
 	const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.45`;
+
 	const [disable, setdisbale] = useState(true);
 	const update = () => setdisbale(!disable);
 
@@ -41,7 +43,7 @@ const Word = ({ datawords }) => {
 
 
 	return (
-		<div className="  word d-flex  justify-content-between p-1 m-1 " style={{ backgroundColor: randomcolor }}>
+		<div className="  word d-flex  justify-content-between p-1 m-1 " style={{ backgroundColor: datawords.background ? datawords.background : randomcolor }}>
 			<div className="d-flex  pt-0  w-100  " >
 				{form}
 			</div>

@@ -18,9 +18,9 @@ const Input = () => {
 
 	const { checker, invalue } = useContext(AppContext);
 
-	const initialvalues = { english: "", persian: "" };
 
 
+	const initialvalues = { english: "", persian: "", background: '' };
 
 
 	return (
@@ -47,7 +47,6 @@ const Input = () => {
 									resetForm()
 								}}
 							>
-
 								<Form >
 									<div className='d-flex my-2'>
 										<Field name="english" className='form-control ltr m-1 input' placeholder="english" value={invalue}></Field>

@@ -26,11 +26,14 @@ const App = () => {
   const [invalue, setinvalue] = useState(null); // خالی کننده مقدار ورودی ها
   const navigate = useNavigate();
 
+
   //  ترجمه کلمه
   useEffect(() => {
+    const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.45`;
+    console.log("word", word)
     const fetchData_google = async () => {
       if (word.english && word.persian) {
-        setmeaning({ english: word.english, persian: word.persian })
+        setmeaning({ english: word.english, persian: word.persian, background: randomcolor })
         setinvalue("");
       } else {
 
@@ -39,7 +42,7 @@ const App = () => {
           try {
 
             let { data: per, status } = await english_tranclate(word.english)
-            setmeaning({ english: word.english, persian: per[0][0][0] })
+            setmeaning({ english: word.english, persian: per[0][0][0], background: randomcolor })
             setinvalue(null);
             console.log(status)
 
@@ -53,7 +56,7 @@ const App = () => {
           setinvalue("");
           try {
             let { data: eng } = await persian_tranclate(word.persian);
-            setmeaning({ english: eng[0][0][0], persian: word.persian });
+            setmeaning({ english: eng[0][0][0], persian: word.persian, background: randomcolor });
             setinvalue(null);
           } catch (err) {
             setinvalue(null);
@@ -67,6 +70,7 @@ const App = () => {
   }, [word]);
   // ثبت و خواندن اطلاعات از  سرور داخلی
   useEffect(() => {
+    console.log("meaning", meaning)
     setmeaning(null);
     const creator = async () => {
       if (meaning != null && meaning.english != meaning.persian) {
@@ -215,6 +219,9 @@ const App = () => {
               <Route path='/' element={<Input />}></Route>
               <Route path='/' element={<Words />}></Route>
               <Route path='/editor/:wid' element={<Word_editor />} />
+
+
+
             </Route>
             <Route path="*" element={<Error />} />
           </Routes>

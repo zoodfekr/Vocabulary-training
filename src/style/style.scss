@@ -49,15 +49,6 @@
 	src: local('B-NAZANIN'), url(../../public/fonts/B-NAZANIN.ttf) format('truetype');
 }
 
-body {
-
-	background-color: #426f8500;
-	// font-family: B-NAZANIN;
-	// font-size: 1.4rem;
-	// min-width: 400px;
-		// border: 2px solid red;
-}
-
 .rtl {
 	direction: rtl;
 }
@@ -78,11 +69,9 @@ body {
 .input-bg {
 	background-color: rgba(246, 246, 255, 0.205);
 	border-radius: 25px;
-	// margin: 5px;
 }
 
 .word-input {
-
 	font-weight: bold;
 }
 
@@ -166,21 +155,23 @@ ol {
 	right: 0;
 
 	.custom-ui-message {
-	
+
 			margin-top: 50vh;
 		}
 	}
-	
+
 	.side-bg {
 		position: absolute;
 		background-image: url('../assets/sidebg.png') !important;
+			// background-image: url('../assets/sidebg2.jpg') !important;
 		background-position: center;
-		// background-clip: content-box;
-	
+		background-size: cover;
+			background-repeat: no-repeat;
 		z-index: -500;
-		opacity: 0.5;
+		opacity: 0.8;
+			box-sizing: border-box;
 	}
-	
+
 	.side-icon {
 		color: rgb(5, 5, 5);
 		font-size: 1.5rem;

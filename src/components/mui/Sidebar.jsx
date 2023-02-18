@@ -166,36 +166,9 @@ export default function PersistentDrawerLeft() {
 					</ListItem>
 					<Divider className='' />
 
-					{/* بخش آزمون */}
-					<ListItem className='p-0'>
-						<ListItemButton disabled>
-							<ListItemIcon>
-								<GrDocumentTest className='side-icon' />
-							</ListItemIcon>
-							<ListItemText primary={"آزمون لغت"} className=" text-dark" />
-						</ListItemButton>
-					</ListItem>
-
-					{/* بخش دریافت کلمات */}
-					<ListItem className='p-0'>
-						<ListItemButton disabled>
-							<ListItemIcon>
-								<AiOutlineFileWord className='side-icon' />
-							</ListItemIcon>
-							<ListItemText primary={" دریافت کلمات   (word)"} className=" text-dark" />
-						</ListItemButton>
-					</ListItem>
-					<ListItem className='p-0'>
-						<ListItemButton disabled>
-							<ListItemIcon>
-								<AiOutlineFileWord className='side-icon' />
-							</ListItemIcon>
-							<ListItemText primary={" دریافت کلمات   (Pdf)"} className=" text-dark" />
-						</ListItemButton>
-					</ListItem>
 
 				</List>
-				<Divider className='bg-dark' />
+
 
 				<List >
 
