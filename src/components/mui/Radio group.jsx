@@ -5,7 +5,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import AppContext from '../context/Context';
+import AppContext from '../../context/Context';
 
 
 export default function RadioButtonsGroup() {
@@ -35,9 +35,9 @@ export default function RadioButtonsGroup() {
 				name="radio-buttons-group"
 			>
 				<FormControlLabel value="colorly" control={<Radio />} label="رنگین کمان" className='border my-2 FormControlLabel colorly' />
-				<FormControlLabel value="gray" control={<Radio />} label="خاکستری" className='border FormControlLabel gray' />
-				<FormControlLabel value="blue" control={<Radio />} label="آبی" className='border my-2 FormControlLabel blue' />
-				<FormControlLabel value="white" control={<Radio />} label="سفید" className='border  FormControlLabel white' />
+				<FormControlLabel value="lightgray" control={<Radio />} label="خاکستری" className='border FormControlLabel gray' />
+				<FormControlLabel value="skyblue" control={<Radio />} label="آبی" className='border my-2 FormControlLabel blue' />
+				<FormControlLabel value="#ebebeb" control={<Radio />} label="سفید" className='border  FormControlLabel white' />
 			</RadioGroup>
 		</FormControl>
 	);
