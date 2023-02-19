@@ -199,6 +199,16 @@ const App = () => {
     },
     palette: {
       mode: mode ? "light" : "dark",
+      C_blue: {
+        main: mode ? "#42a5f5" : "#1565c0",
+      },
+      C_gray: {
+        main: mode ? "#9a9a9a" : "#6f6f6f",
+      },
+      C_purple: {
+        main: mode ? "#EE59DA" : "#6A386D",
+      },
+
     }
   })
   const cachertl = createCache({
@@ -218,7 +228,7 @@ const App = () => {
   const costomcolor = JSON.parse(window.localStorage.getItem('word_bgcolor'));
 
   return (
-    <Appcontext.Provider value={{ datawords, clear_s1, checker, invalue, handleupdate, setmode, costomcolor, setwordcolor }}>
+    <Appcontext.Provider value={{ datawords, clear_s1, checker, invalue, handleupdate, setmode, costomcolor, setwordcolor, theme }}>
 
       <CacheProvider value={cachertl}>
         <ThemeProvider theme={theme}>
@@ -228,9 +238,6 @@ const App = () => {
               <Route path='/' element={<Input />}></Route>
               <Route path='/' element={<Words />}></Route>
               <Route path='/editor/:wid' element={<Word_editor />} />
-
-
-
             </Route>
             <Route path="*" element={<Error />} />
           </Routes>

@@ -3,9 +3,32 @@ import Word from './Word';
 import AppContext from '../context/Context';
 
 const Words = () => {
-	const { datawords, costomcolor } = useContext(AppContext);
+	const { datawords, costomcolor, theme } = useContext(AppContext);
+	const [color, setcolor] = useState();
+
+	const blue = theme.palette.C_blue.main
+	const gray = theme.palette.C_gray.main
+	const purple = theme.palette.C_purple.main
+	const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.45`;
 
 
+	// useEffect(() => {
+
+	// 	switch (costomcolor) {
+	// 		case "blue":
+	// 			setcolor(blue)
+	// 			break;
+	// 		case "gray":
+	// 			setcolor(gray)
+	// 			break;
+	// 		case "purple":
+	// 			setcolor(purple)
+	// 			break;
+	// 		case "colorly":
+	// 			datawords.background ? setcolor(datawords.background) : setcolor(randomcolor)
+	// 			break;
+	// 	}
+	// }, []);
 
 
 	return (
