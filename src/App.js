@@ -29,7 +29,7 @@ const App = () => {
 
   //  ترجمه کلمه
   useEffect(() => {
-    const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.45`;
+    const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.45)`;
     console.log("word", word)
     const fetchData_google = async () => {
       if (word.english && word.persian) {

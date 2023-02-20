@@ -16,14 +16,8 @@ export default function RadioButtonsGroup() {
 	const setbackgroundcolr = (data) => {
 		setwordcolor(data);
 		window.localStorage.setItem('word_bgcolor', JSON.stringify(data));
-		testreader();
 	}
 
-
-	const testreader = () => {
-		const test = window.localStorage.getItem('word_bgcolor');
-		console.log("loader", test)
-	}
 
 	return (
 		<FormControl className='  w-100' onChange={(event) => setbackgroundcolr(event.target.value)}

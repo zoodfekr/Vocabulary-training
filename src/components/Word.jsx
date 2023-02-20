@@ -7,20 +7,27 @@ import { HiSpeakerWave } from "react-icons/hi2";
 import Box from '@mui/material/Box';
 
 const Word = ({ datawords, costomcolor }) => {
-	const { handleupdate, clear_s1, } = useContext(AppContext);
-	const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.45`;
+	const { handleupdate, clear_s1, theme } = useContext(AppContext);
 	const [disable, setdisbale] = useState(true);
 	const update = () => setdisbale(!disable);
 
+	// const randomcolor = `#${Math.floor(Math.random() * 255).toString(16)}${Math.floor(Math.random() * 200).toString(16)}${Math.floor(Math.random() * 255).toString(16)}`;
+	const randomcolor = `rgba(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)}, 0.5)`;
+	const [color, setcolor] = useState();
+	const blue = theme.palette.C_blue.main
+	const gray = theme.palette.C_gray.main
+	const purple = theme.palette.C_purple.main
 
-
-
+	// debugger;
 	const style = {
 		backgroundColor: costomcolor == "colorly"
 			? (datawords.background ? datawords.background : randomcolor)
-			: costomcolor
+			: (costomcolor == "gray" ? gray :
+				(costomcolor == "purple" ? purple : blue)
+			)
 	}
 
+	console.log({randomcolor, style});
 
 	const stylefont = {
 		fontSize: "15px",
