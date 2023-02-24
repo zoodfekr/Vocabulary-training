@@ -200,13 +200,13 @@ const App = () => {
     palette: {
       mode: mode ? "light" : "dark",
       C_blue: {
-        main: mode ? "#42a5f5" : "#1565c0",
+        main: mode ? "#93BFCF" : "#6096B4",
       },
       C_gray: {
         main: mode ? "#9a9a9a" : "#6f6f6f",
       },
       C_purple: {
-        main: mode ? "#EE59DA" : "#6A386D",
+        main: mode ? "#A084DC" : "#645CBB",
       },
 
     }

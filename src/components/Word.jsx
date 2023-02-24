@@ -11,7 +11,6 @@ const Word = ({ datawords, costomcolor }) => {
 	const [disable, setdisbale] = useState(true);
 	const update = () => setdisbale(!disable);
 
-	// const randomcolor = `#${Math.floor(Math.random() * 255).toString(16)}${Math.floor(Math.random() * 200).toString(16)}${Math.floor(Math.random() * 255).toString(16)}`;
 	const randomcolor = `rgba(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)}, 0.5)`;
 	const [color, setcolor] = useState();
 	const blue = theme.palette.C_blue.main
@@ -27,7 +26,6 @@ const Word = ({ datawords, costomcolor }) => {
 			)
 	}
 
-	console.log({randomcolor, style});
 
 	const stylefont = {
 		fontSize: "15px",
