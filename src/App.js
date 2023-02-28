@@ -21,38 +21,6 @@ import { confirmAlert } from 'react-confirm-alert';
 
 
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBKpkhYSBXsn4JbH6w1WTcA5p6Dg9wxTZQ",
-  authDomain: "vocabulary-training-f6bdc.firebaseapp.com",
-  projectId: "vocabulary-training-f6bdc",
-  storageBucket: "vocabulary-training-f6bdc.appspot.com",
-  messagingSenderId: "762391712431",
-  appId: "1:762391712431:web:a45b13a2c8c28d4fd23a5a",
-  measurementId: "G-XXQR81CYSK"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app)
-console.log('loger 1', db);
-
-
-// const analytics = getAnalytics(app);
-
-// console.log('loger 1', db);
-// console.log('loger 2', analytics.cities);
-
-
-
 const App = () => {
   const [word, setWord] = useState(null); //کلمه دریافتی از کاربر
   const [meaning, setmeaning] = useState(null); // کلمه معنی شده از گوگل
@@ -83,44 +51,44 @@ const App = () => {
 
   //  ترجمه کلمه
   useEffect(() => {
-    const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.45)`;
-    console.log("word", word)
-    const fetchData_google = async () => {
-      if (word.english && word.persian) {
-        setmeaning({ english: word.english, persian: word.persian, background: randomcolor })
-        setinvalue("");
-      } else {
+    // const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.45)`;
+    // console.log("word", word)
+    // const fetchData_google = async () => {
+    //   if (word.english && word.persian) {
+    //     setmeaning({ english: word.english, persian: word.persian, background: randomcolor })
+    //     setinvalue("");
+    //   } else {
 
-        if (word.english && !word.persian) {
-          setinvalue("");
-          try {
+    //     if (word.english && !word.persian) {
+    //       setinvalue("");
+    //       try {
 
-            let { data: per, status } = await english_tranclate(word.english)
-            setmeaning({ english: word.english, persian: per[0][0][0], background: randomcolor })
-            setinvalue(null);
-            console.log(status)
+    //         let { data: per, status } = await english_tranclate(word.english)
+    //         setmeaning({ english: word.english, persian: per[0][0][0], background: randomcolor })
+    //         setinvalue(null);
+    //         console.log(status)
 
-          } catch (err) {
-            setinvalue(null);
-            console.log(' مشکل دریافت دیتا انگلیسی');
-            alert("عدم دسترس به سرور")
-          }
-        }
-        else if (word.persian && !word.english) {
-          setinvalue("");
-          try {
-            let { data: eng } = await persian_tranclate(word.persian);
-            setmeaning({ english: eng[0][0][0], persian: word.persian, background: randomcolor });
-            setinvalue(null);
-          } catch (err) {
-            setinvalue(null);
-            alert("عدم دسترس به سرور")
-            console.log('مشکل دریافت دیتا فارسی');
-          }
-        }
-      }
-    };
-    fetchData_google();
+    //       } catch (err) {
+    //         setinvalue(null);
+    //         console.log(' مشکل دریافت دیتا انگلیسی');
+    //         alert("عدم دسترس به سرور")
+    //       }
+    //     }
+    //     else if (word.persian && !word.english) {
+    //       setinvalue("");
+    //       try {
+    //         let { data: eng } = await persian_tranclate(word.persian);
+    //         setmeaning({ english: eng[0][0][0], persian: word.persian, background: randomcolor });
+    //         setinvalue(null);
+    //       } catch (err) {
+    //         setinvalue(null);
+    //         alert("عدم دسترس به سرور")
+    //         console.log('مشکل دریافت دیتا فارسی');
+    //       }
+    //     }
+    //   }
+    // };
+    // fetchData_google();
   }, [word]);
   // ثبت و خواندن اطلاعات از  سرور داخلی
   useEffect(() => {
