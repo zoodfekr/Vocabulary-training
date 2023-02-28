@@ -19,6 +19,8 @@ import { CssBaseline } from '@mui/material';
 import { CacheProvider } from '@emotion/react';
 import { confirmAlert } from 'react-confirm-alert';
 
+
+
 const App = () => {
   const [word, setWord] = useState(null); //کلمه دریافتی از کاربر
   const [meaning, setmeaning] = useState(null); // کلمه معنی شده از گوگل
@@ -29,44 +31,44 @@ const App = () => {
 
   //  ترجمه کلمه
   useEffect(() => {
-    const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.45)`;
-    console.log("word", word)
-    const fetchData_google = async () => {
-      if (word.english && word.persian) {
-        setmeaning({ english: word.english, persian: word.persian, background: randomcolor })
-        setinvalue("");
-      } else {
+    // const randomcolor = `rgb( ${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 200)},${Math.floor(Math.random() * 255)},0.45)`;
+    // console.log("word", word)
+    // const fetchData_google = async () => {
+    //   if (word.english && word.persian) {
+    //     setmeaning({ english: word.english, persian: word.persian, background: randomcolor })
+    //     setinvalue("");
+    //   } else {
 
-        if (word.english && !word.persian) {
-          setinvalue("");
-          try {
+    //     if (word.english && !word.persian) {
+    //       setinvalue("");
+    //       try {
 
-            let { data: per, status } = await english_tranclate(word.english)
-            setmeaning({ english: word.english, persian: per[0][0][0], background: randomcolor })
-            setinvalue(null);
-            console.log(status)
+    //         let { data: per, status } = await english_tranclate(word.english)
+    //         setmeaning({ english: word.english, persian: per[0][0][0], background: randomcolor })
+    //         setinvalue(null);
+    //         console.log(status)
 
-          } catch (err) {
-            setinvalue(null);
-            console.log(' مشکل دریافت دیتا انگلیسی');
-            alert("عدم دسترس به سرور")
-          }
-        }
-        else if (word.persian && !word.english) {
-          setinvalue("");
-          try {
-            let { data: eng } = await persian_tranclate(word.persian);
-            setmeaning({ english: eng[0][0][0], persian: word.persian, background: randomcolor });
-            setinvalue(null);
-          } catch (err) {
-            setinvalue(null);
-            alert("عدم دسترس به سرور")
-            console.log('مشکل دریافت دیتا فارسی');
-          }
-        }
-      }
-    };
-    fetchData_google();
+    //       } catch (err) {
+    //         setinvalue(null);
+    //         console.log(' مشکل دریافت دیتا انگلیسی');
+    //         alert("عدم دسترس به سرور")
+    //       }
+    //     }
+    //     else if (word.persian && !word.english) {
+    //       setinvalue("");
+    //       try {
+    //         let { data: eng } = await persian_tranclate(word.persian);
+    //         setmeaning({ english: eng[0][0][0], persian: word.persian, background: randomcolor });
+    //         setinvalue(null);
+    //       } catch (err) {
+    //         setinvalue(null);
+    //         alert("عدم دسترس به سرور")
+    //         console.log('مشکل دریافت دیتا فارسی');
+    //       }
+    //     }
+    //   }
+    // };
+    // fetchData_google();
   }, [word]);
   // ثبت و خواندن اطلاعات از  سرور داخلی
   useEffect(() => {

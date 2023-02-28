@@ -162,23 +162,36 @@ export default function PersistentDrawerLeft() {
 						<Typography component="div" className=' d-flex align-items-center'>
 							<AntSwitch onClick={() => setmode((prevLoading) => !prevLoading)}></AntSwitch>
 						</Typography>
-						{/* <ListItemButton>
-						</ListItemButton> */}
+
+						<ListItemIcon>
+							<GiNightSleep className='side-icon' />
+						</ListItemIcon>
+						<ListItemText primary={"نمایش کلمات فارسی"} className=" text-dark" />
+						<Typography component="div" className=' d-flex align-items-center'>
+							<AntSwitch onClick={{}}></AntSwitch>
+						</Typography>
+
+						<ListItemIcon>
+							<GiNightSleep className='side-icon' />
+						</ListItemIcon>
+						<ListItemText primary={"  نمایش کلمات انگلیسی"} className=" text-dark" />
+						<Typography component="div" className=' d-flex align-items-center'>
+							<AntSwitch onClick={{}}></AntSwitch>
+						</Typography>
+
 					</ListItem>
+
 					<Divider className='bg-dark' />
 					<ListItem className=''>
 						<RadioButtonsGroup></RadioButtonsGroup>
 					</ListItem>
 					<Divider className='bg-dark' />
 
-				</List>
-
-
-				<List >
-
-
 
 				</List>
+
+
+
 			</Drawer>
 
 		</Box >
