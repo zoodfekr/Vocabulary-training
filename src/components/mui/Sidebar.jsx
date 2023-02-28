@@ -23,10 +23,11 @@ import { RiFileWord2Fill } from "react-icons/ri";
 import AntSwitch from './AntSwitch';
 import AppContext from '../../context/Context';
 import { GiNightSleep } from "react-icons/gi";
+import { BiHide } from "react-icons/bi";
+
 import { GrDocumentTest } from "react-icons/gr";
 import { AiOutlineFileWord } from "react-icons/ai";
 import RadioButtonsGroup from './Radio group';
-
 
 
 
@@ -79,7 +80,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 export default function PersistentDrawerLeft() {
-	const { setmode } = useContext(AppContext);
+
+	const { setmode, setpersianshow, setenglishshow } = useContext(AppContext);
 	const theme = useTheme();
 	const [open, setOpen] = React.useState(false);
 
@@ -162,24 +164,30 @@ export default function PersistentDrawerLeft() {
 						<Typography component="div" className=' d-flex align-items-center'>
 							<AntSwitch onClick={() => setmode((prevLoading) => !prevLoading)}></AntSwitch>
 						</Typography>
-
-						<ListItemIcon>
-							<GiNightSleep className='side-icon' />
-						</ListItemIcon>
-						<ListItemText primary={"نمایش کلمات فارسی"} className=" text-dark" />
-						<Typography component="div" className=' d-flex align-items-center'>
-							<AntSwitch onClick={{}}></AntSwitch>
-						</Typography>
-
-						<ListItemIcon>
-							<GiNightSleep className='side-icon' />
-						</ListItemIcon>
-						<ListItemText primary={"  نمایش کلمات انگلیسی"} className=" text-dark" />
-						<Typography component="div" className=' d-flex align-items-center'>
-							<AntSwitch onClick={{}}></AntSwitch>
-						</Typography>
-
 					</ListItem>
+
+
+
+					<ListItem className=''>
+						<ListItemIcon>
+							<BiHide className='side-icon' />
+						</ListItemIcon>
+						<ListItemText primary={"  کلمات فارسی"} className=" text-dark" />
+						<Typography component="div" className=' d-flex align-items-center'>
+							<AntSwitch onClick={() => setpersianshow((prevLoading) => !prevLoading)}></AntSwitch>
+						</Typography>
+					</ListItem>
+
+					<ListItem className=''>
+						<ListItemIcon>
+							<BiHide className='side-icon' />
+						</ListItemIcon>
+						<ListItemText primary={" کلمات انگلیسی"} className=" text-dark" />
+						<Typography component="div" className=' d-flex align-items-center'>
+							<AntSwitch onClick={() => setenglishshow((prevLoading) => !prevLoading)}></AntSwitch>
+						</Typography>
+					</ListItem>
+
 
 					<Divider className='bg-dark' />
 					<ListItem className=''>
@@ -187,11 +195,14 @@ export default function PersistentDrawerLeft() {
 					</ListItem>
 					<Divider className='bg-dark' />
 
-
 				</List>
 
 
+				<List >
 
+
+
+				</List>
 			</Drawer>
 
 		</Box >
