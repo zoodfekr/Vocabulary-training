@@ -19,6 +19,40 @@ import { CssBaseline } from '@mui/material';
 import { CacheProvider } from '@emotion/react';
 import { confirmAlert } from 'react-confirm-alert';
 
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBKpkhYSBXsn4JbH6w1WTcA5p6Dg9wxTZQ",
+  authDomain: "vocabulary-training-f6bdc.firebaseapp.com",
+  projectId: "vocabulary-training-f6bdc",
+  storageBucket: "vocabulary-training-f6bdc.appspot.com",
+  messagingSenderId: "762391712431",
+  appId: "1:762391712431:web:a45b13a2c8c28d4fd23a5a",
+  measurementId: "G-XXQR81CYSK"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app)
+console.log('loger 1', db);
+
+
+// const analytics = getAnalytics(app);
+
+// console.log('loger 1', db);
+// console.log('loger 2', analytics.cities);
+
+
+
 const App = () => {
   const [word, setWord] = useState(null); //کلمه دریافتی از کاربر
   const [meaning, setmeaning] = useState(null); // کلمه معنی شده از گوگل
@@ -26,6 +60,26 @@ const App = () => {
   const [invalue, setinvalue] = useState(null); // خالی کننده مقدار ورودی ها
   const navigate = useNavigate();
   const [wordcolor, setwordcolor] = useState(null); // خالی کننده مقدار ورودی ها
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   //  ترجمه کلمه
   useEffect(() => {
@@ -102,7 +156,6 @@ const App = () => {
   }, [meaning]);
 
   //حذف کننده کلمه
-
   const clear_s1 = id => {
 
     confirmAlert({
@@ -132,7 +185,6 @@ const App = () => {
     });
 
   };
-
   const clear_s2 = async (id) => {
     try {
       const { status } = await remover(id);
@@ -150,7 +202,6 @@ const App = () => {
       console.log("مشکل در حذف کلمه");
     }
   }
-
 
   // چک کننده کلمات تکراری
   const checker = (value) => {

@@ -1,0 +1,21 @@
+[debug] [2023-02-24T18:37:13.891Z] ----------------------------------------------------------------------
+[debug] [2023-02-24T18:37:13.907Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ramina\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-02-24T18:37:13.907Z] CLI Version:   11.24.0
+[debug] [2023-02-24T18:37:13.907Z] Platform:      win32
+[debug] [2023-02-24T18:37:13.907Z] Node Version:  v17.2.0
+[debug] [2023-02-24T18:37:13.907Z] Time:          Fri Feb 24 2023 22:07:13 GMT+0330 (Iran Standard Time)
+[debug] [2023-02-24T18:37:13.907Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-24T18:37:13.922Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-24T18:37:13.922Z] > authorizing via signed-in user (zoodfekr.r@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\ramina\Desktop\Vocabulary-training
+
